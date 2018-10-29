@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+# Installs dotenv for keys
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'bootstrap', '~> 4.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
