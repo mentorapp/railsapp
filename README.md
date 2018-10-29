@@ -31,7 +31,6 @@ As a user I should be able to:
 • Log-in
 • Create a profile with a profile image, username, description, purpose for using the app
 • View other user's profiles, message other users
-• Book a time with a mentor/provide my availability as a mentor
 • Have the option to pay for a booking/receive payment
 
 Ethical Considerations:
@@ -39,5 +38,13 @@ Ethical Considerations:
 • User reviews
 • Code of conduct
 • Code of conduct violations
+
+Optionals :
+• Book a time with a mentor/provide my availability as a mentor
+
+User flow: 
+
+• Wireframes
+• ERD
 
 
