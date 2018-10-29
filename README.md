@@ -16,7 +16,7 @@ We set the project up as a GitHub organisation, aiming to make the organisation 
 - go into the GitHub repo and merge it into master
 - delete the branch online
 - do a git pull on the local machine
-- delete the local branch with 'git delete -b branch-name'
+- delete the local branch with 'git branch -d branch-name'
 
 ## Sprint Planning
 
