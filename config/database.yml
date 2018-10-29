@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: mentorme_production
-  username: mentorme
-  password: <%= ENV['MENTORME_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
