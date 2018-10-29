@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  skills: MyText
+  availability: MyText
+  price: 1
+
+two:
+  user: two
+  skills: MyText
+  availability: MyText
+  price: 1
