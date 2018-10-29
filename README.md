@@ -121,3 +121,7 @@ Sometimes we choose to pair or mob program, especially for the initial setup com
 ## 22. Discuss methods you will use to protect information and data.
 
 ## 23. Research what your legal obligations are in relation to handling user data.
+
+
+
+ <!-- <span class="sr-only">(current)</span> -->
