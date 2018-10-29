@@ -1,5 +1,7 @@
 MentorMe
 
+App on Heroku: https://techmentor.herokuapp.com/
+
 Rails App by Simon, Corey and Vanessa.
 
 Sprint Planning:
