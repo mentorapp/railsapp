@@ -3,11 +3,6 @@ class MentorsController < ApplicationController
 
   def index
     @mentors = Mentor.all
-    #@users = []
-    #@mentors.each do |mentor| 
-      #@user = User.find(mentor.user_id)
-      #@users << @user
-    #end
   end
 
   def show
