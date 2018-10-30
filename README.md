@@ -68,6 +68,8 @@ Problems this app will solve:
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
 
+Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is appropriate for the user's objective.
+
 ## 7. Identify and describe the production database setup (i.e. postgres instance).
 
 ## 8. Describe the architecture of your App.
@@ -81,6 +83,8 @@ Problems this app will solve:
 ## 12. Discuss the database relations to be implemented.
 
 ## 13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.
+
+The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user
 
 ## 14. Provide your database schema design.
 
