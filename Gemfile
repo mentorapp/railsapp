@@ -6,6 +6,8 @@ ruby '2.4.1'
 # Installs dotenv for keys
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem "aws-sdk-s3", require: false
+
 gem 'bootstrap', '~> 4.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
