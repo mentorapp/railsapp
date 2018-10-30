@@ -122,6 +122,50 @@ Sometimes we choose to pair or mob program, especially for the initial setup com
 
 ## 23. Research what your legal obligations are in relation to handling user data.
 
-
-
+**Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
+
+# Design Planning
+
+## Brand Attributes
+
+inspiration, collaboration, networking
+aspirational tone
+
+edgy
+
+ask-anyone
+
+**Brand references**
+
+Airbnb, TaskRabbit
+
+**Target Demographic**
+
+mid-20s to mid-30s is average mentee user - students and career changers
+
+intelligent
+connected
+tech-savvy (they care about auto-complete on forms, and will probably try putting bad data in just to see what it does)
+
+**Colour and Imagery**
+1 primary colour, maybe a few secondary colours
+
+urban influence with a focus on people - connecting people - all imagery needs to focus on
+
+## Inspiration
+
+Once we were clear on our brand attributes and on wanting to use Bootstrap to make the detailed styling easier, we looked for websites that had the feel that we were after. We all ended up really liked websites with a salmon accenting, so found it pretty straightforward to head in that direction with the design.
+
+**Websites**
+
+[Mentor Loop](https://mentorloop.com/mentorloop-software-demo/)
+[Open Listings](https://www.openlistings.com/)
+
+**Images**
+[Gurafiku](http://gurafiku.tumblr.com/post/92043420892/japanese-exhibition-poster-hokusai-x-sumida)
+[General Provision Icon Set](https://dribbble.com/shots/5467660-General-Provision-Icon-Set)
+
+**Figma Wireframes**
+
+[Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)

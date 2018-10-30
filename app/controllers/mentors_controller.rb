@@ -3,6 +3,7 @@ class MentorsController < ApplicationController
 
   def index
     @mentors = Mentor.all
+    @users
   end
 
   def show
