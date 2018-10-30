@@ -1,6 +1,7 @@
 <% user = @mentor.user %>
 <h1><%= user.username %></h1>
 <p><%= @mentor.id %></p>
+<!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
 <% if user.avatar.attached? %>
   <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
 <% else %>
