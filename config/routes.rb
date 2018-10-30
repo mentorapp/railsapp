@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'users/show'
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'welcome#index'
   get 'mentors' => 'mentors#index'
   get 'mentors/:id' => 'mentors#show'
