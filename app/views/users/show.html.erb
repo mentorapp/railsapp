@@ -1,2 +1,7 @@
 <h1>My Dasboard</h1>
 <p><%= @user.username %></p>
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
+<% else %>
+  <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+<% end %>
