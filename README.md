@@ -14,13 +14,13 @@ We set the project up as a GitHub organisation, aiming to make the organisation 
 - commit to the new branch
 - push to the online repo with: 'git push origin branch-name'
 - go into the GitHub repo and merge it into master 'new pull request'
-- delete the branch online
+- delete the branch online if you don't need it anymore
 - do a git pull on the local machine
-- delete the local branch with 'git branch -d branch-name'
+- delete the local branch if you don't need it any more with 'git branch -d branch-name'
 
 ## Sprint Planning
 
-App Idea - To connect Mentors and Mentees in the Tech Industry.
+App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
 
 Problems this app will solve:
 
@@ -160,19 +160,38 @@ Once we were clear on our brand attributes and on wanting to use Bootstrap to ma
 **Websites**
 
 [Mentor Loop](https://mentorloop.com/mentorloop-software-demo/)
+
 [Open Listings](https://www.openlistings.com/)
 
 **Images**
-[Gurafiku](http://gurafiku.tumblr.com/post/92043420892/japanese-exhibition-poster-hokusai-x-sumida)
-[General Provision Icon Set](https://dribbble.com/shots/5467660-General-Provision-Icon-Set)
+
+[Link to Gurafiku](http://gurafiku.tumblr.com/post/92043420892/japanese-exhibition-poster-hokusai-x-sumida)
+
+[Link to General Provision Icon Set](https://dribbble.com/shots/5467660-General-Provision-Icon-Set)
 
 **Figma Wireframes**
 
-[Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)
+[Link to Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)
 
 
 # Team Communication
 
+We elected to work in person for the majority of the time, confining our required hours to the standard 9-5. This meant that in addition to the morning standup we talked regularly throughout the day, ensuring our local repos were up to date and that we were making good use of branches and of our time. We also used pair and mob programming on particularly tricky parts of the project.
+
 ## Trello
 
+We found the Trello board helpful for keeping track of where we were in the project, and for keeping track of who was working on what. As people elected to work on tasks Vanessa assigned them to the Trello cards, and cards were moved across to 'Doing' and 'Done' by either the team member working on them or by Vanessa.
+
+*Day 1 Trello Board*
+![Day 1 Trello Board](readme-assets/day-1-trello.png)
+
+*Day 2 Trello Board*
+![Day 2 Trello Board](readme-assets/day-2-trello.png)
+
 ## Slack
+
+*Day 1 Slack Channel*
+![Day 1 Slack Channel](readme-assets/day-1-slack.png)
+
+*Day 2 Slack Channel*
+![Day 2 Slack Channel](readme-assets/day-2-slack.png)
