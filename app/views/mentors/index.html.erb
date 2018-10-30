@@ -38,13 +38,17 @@
         <% user = mentor.user %>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
+            <% else %>
+              <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+            <% end %>
             <div class="card-body">
               <h4 class="card-title"><%= user.username %></h4>
               <p class="card-text"><%= user.about_me %></p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <%= link_to 'Show', mentor_path(mentor), class: "btn btn=primary" %>
             </div>
           </div>
         </div>

@@ -1,3 +1,8 @@
-<h1>Mentors#show</h1>
-<p><%= @mentor.id %>
-</p>
+<% user = @mentor.user %>
+<h1><%= user.username %></h1>
+<p><%= @mentor.id %></p>
+<% if user.avatar.attached? %>
+  <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
+<% else %>
+  <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+<% end %>
