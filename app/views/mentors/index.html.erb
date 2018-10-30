@@ -34,15 +34,14 @@
 
       <!-- Page Features -->
       <div class="row text-center">
-      <% @mentors.each do |mentor| %>
-      <!-- Push this up into the mentors controller and pass through an array of each mentor and their user profile. -->
-       <% @user = User.find(mentor.user_id) %>
+      <% @mentors.each_with_index do |mentor, index| %>
+        <% user = mentor.user %>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
+            <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
             <div class="card-body">
-              <h4 class="card-title"><%= @user.username %></h4>
-              <p class="card-text"><%= @user.about_me %></p>
+              <h4 class="card-title"><%= user.username %></h4>
+              <p class="card-text"><%= user.about_me %></p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Find Out More!</a>
