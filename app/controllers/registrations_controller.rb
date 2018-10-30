@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
     session[:user_id] = user.id
     # If the user selects the 'Mentor' checkbox this param will be equal to 1 and this if statement will call create on the Mentor model.
     if params[:mentor] == "1"
-      Mentor.create({user_id: user.id})
+      Mentor.create({user_id: user.id, skills: "Skills", availability: "Availability", price: 0})
     end
     redirect_to root_path
   end
