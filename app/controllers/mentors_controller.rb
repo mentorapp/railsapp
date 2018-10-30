@@ -2,6 +2,8 @@ class MentorsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @mentors = Mentor.all
+    @users
   end
 
   def show
