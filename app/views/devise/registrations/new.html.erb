@@ -1,5 +1,9 @@
 <h2>Sign up</h2>
 
+<hr>
+
+<h6>Get access to the newest listings and expert buyer support</h6>
+
 <form>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -11,74 +15,53 @@
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-
   <div class="field form-group">
     <%= f.label :'Password*' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, class: "form-control", autofocus: true, placeholder: "Enter password" %>
+    <small id="emailHelp" class="form-text text-muted"> <%= @minimum_password_length %> characters minimum</small>
   </div>
 
   <div class="field form-group">
     <%= f.label :'password_confirmation*' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, class: "form-control", autofocus: true, placeholder: "Re-enter password" %>
   </div> <br>
 
   <div class="field form-group">
     <%= f.label :'username*' %><br />
-    <%= f.text_field :username, size: '50x2'%>
+    <%= f.text_field :username, class: "form-control", autofocus: true, placeholder: "Enter Username"%>
   </div>
 
   <div class="field form-group">
     <%= f.label :'Avatar' %><br />
-    <%= f.file_field :avatar %>
+    <%= f.file_field class: "form-label", autofocus: true, placeholder: "Choose File" %>
   </div>
 
   <div class="field form-group">
     <%= f.label :purpose %><br />
-    <%= f.text_area :purpose, size: '50x2'%>
+    <%= f.text_area :purpose, class: "form-control", autofocus: true, placeholder: "I'm looking for technical mentorship from a Javascript expert!" %>
   </div>
 
   <div class="field form-group">
     <%= f.label :'About Me' %><br />
-    <%= f.text_area :about_me, size: '50x6'%>
+    <%= f.text_area :about_me, class: "form-control", autofocus: true, placeholder: "I'm a freelance web designer currently self-learning Javascript online." %>
   </div>
 
-  <div>
-    <%= check_box_tag(:mentor), class: "form-check" %>
+  <div class="form-group">
+    <%= check_box_tag(:mentor) %>
     <%= label_tag(:mentor, "I want to mentor") %>
   </div>
 
-  <p>
+  <small>
     * Required fields
-  </p>
+  </small>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
 
+<small>Already have an Airbnb account?</small>
 <%= render "devise/shared/links" %>
-</form>
-
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
