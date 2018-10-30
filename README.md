@@ -169,3 +169,10 @@ Once we were clear on our brand attributes and on wanting to use Bootstrap to ma
 **Figma Wireframes**
 
 [Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)
+
+
+# Team Communication
+
+## Trello
+
+## Slack
