@@ -13,6 +13,7 @@ We set the project up as a GitHub organisation, aiming to make the organisation 
 - work on the new branch
 - commit to the new branch
 - push to the online repo with: 'git push origin branch-name'
+- checkout back to master
 - go into the GitHub repo and merge it into master 'new pull request'
 - delete the branch online if you don't need it anymore
 - do a git pull on the local machine
