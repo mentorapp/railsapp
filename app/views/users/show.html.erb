@@ -16,6 +16,8 @@
 <p>About Me: <%= @user.about_me %></p>
 <p>Purpose: <%= @user.purpose %></p>
 
+<%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary" %>
+
 <!-- Devise link to edit these details, destroy link to remove them as a user -->
 
 <% if @mentor_bookings.length > 0 %>
