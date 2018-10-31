@@ -1,9 +1,16 @@
 <% user = @mentor.user %>
 <h1><%= user.username %></h1>
-<p><%= @mentor.id %></p>
 <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
 <% if user.avatar.attached? %>
   <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
 <% else %>
   <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
 <% end %>
+
+<p>Purpose: <%= user.purpose %></p>
+<p>About Me: <%= user.about_me %></p>
+
+<p>Skills: <%= @mentor.skills %></p>
+<p>Availability: <%= @mentor.availability %></p>
+
+<!-- Book now button related to Stripe -->
