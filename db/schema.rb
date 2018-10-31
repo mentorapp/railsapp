@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_035728) do
+ActiveRecord::Schema.define(version: 2018_10_31_012148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2018_10_30_035728) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bookings", id: false, force: :cascade do |t|
+    t.bigint "mentor_id", null: false
+    t.bigint "mentee_id", null: false
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentee_id", "mentor_id"], name: "index_bookings_on_mentee_id_and_mentor_id"
+    t.index ["mentor_id", "mentee_id"], name: "index_bookings_on_mentor_id_and_mentee_id"
   end
 
   create_table "mentors", force: :cascade do |t|
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_035728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "users", column: "mentee_id"
+  add_foreign_key "bookings", "users", column: "mentor_id"
   add_foreign_key "mentors", "users"
 end
