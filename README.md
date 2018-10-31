@@ -19,6 +19,15 @@ We set the project up as a GitHub organisation, aiming to make the organisation 
 - do a git pull on the local machine
 - delete the local branch if you don't need it any more with 'git branch -d branch-name'
 
+## Database Seeding
+
+In order to use the seed file to populate our database we need to do the following:
+
+rails db:drop
+rails db:create
+rails db:migrate
+rails db:seed
+
 ## Sprint Planning
 
 App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
