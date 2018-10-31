@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "Enter email" %>
+  </div> <br>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, class: "form-control", autocomplete: "current-password", autofocus: true, placeholder: "Password" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -16,10 +16,10 @@
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
+  <% end -%>  
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
 <% end %>
 
