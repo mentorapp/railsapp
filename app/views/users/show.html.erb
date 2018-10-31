@@ -6,3 +6,36 @@
 <% else %>
   <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
 <% end %>
+
+<!-- This page should have the users information, edit and destroy button for their user profile and their mentor profile if they have one, list of bookings they are involved with and edit info for those bookings depending on their permissions -->
+
+<h2>About You</h2>
+
+<p>Username: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+<p>About Me: <%= @user.about_me %></p>
+<p>Purpose: <%= @user.purpose %></p>
+
+<!-- Devise link to edit these details, destroy link to remove them as a user -->
+
+<% if @mentor_bookings.length > 0 %>
+  <% @mentor = Mentor.find(current_user.id) %>
+  <h2>Your Mentor Details</h2>
+  <p>Skills: <%= @mentor.skills %></p>
+  <p>Availability: <%= @mentor.availability %></p>
+  <p>Price: <%= @mentor.price %></p>
+<!-- Edit Mentor Details Link, destroy mentor button -->
+  <p>You are booked to mentor the following sessions: </p>
+  <% @mentor_bookings.each do |booking| %>
+<!-- Edit and destroy buttons for bookings? -->
+    <p><%= booking.mentee_id%></p>
+  <% end %>
+<% end %>
+
+<% if @mentee_bookings.length > 0 %>
+  <p>You are booked to be mentored in the following sessions: </p>
+  <% @mentee_bookings.each do |booking| %>
+  <!-- Edit and destroy buttons for bookings? -->
+    <p><%= booking.mentor_id%></p>
+  <% end %>
+<% end %>
