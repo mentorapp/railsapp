@@ -3,8 +3,8 @@ class ChargesController < ApplicationController
     end
     
     def create
-      # Amount in cents
-      @amount = 500
+
+      @mentor.price = params[:mentor][:price].to_f * 100
     
       customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
@@ -13,9 +13,9 @@ class ChargesController < ApplicationController
     
       charge = Stripe::Charge.create(
         :customer    => customer.id,
-        :amount      => @amount,
-        :description => 'Rails Stripe customer',
-        :currency    => 'usd'
+        :amount      => @mentor.price,
+        :description => @mentor.price,
+        :currency    => 'aud'
       )
 
     # This is commented out until we have a registered MailGun domain that can send to any email address.

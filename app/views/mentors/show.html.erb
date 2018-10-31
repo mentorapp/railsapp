@@ -12,7 +12,7 @@
 
 <p>Skills: <%= @mentor.skills %></p>
 <p>Availability: <%= @mentor.availability %></p>
-<p>Price: <%= @mentor.price %></p>
+<p>Price: <%= number_to_currency(@mentor.price / 100.0) %></p>
 
 <!-- Book now button related to Stripe -->
 
