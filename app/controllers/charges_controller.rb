@@ -3,8 +3,8 @@ class ChargesController < ApplicationController
     end
     
     def create
-      # Amount in cents
-      @amount = 500
+
+      @mentor.price = params[:mentor][:price].to_f * 100
     
       customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
@@ -13,11 +13,13 @@ class ChargesController < ApplicationController
     
       charge = Stripe::Charge.create(
         :customer    => customer.id,
-        :amount      => @amount,
-        :description => 'Rails Stripe customer',
-        :currency    => 'usd'
+        :amount      => @mentor.price,
+        :description => @mentor.price,
+        :currency    => 'aud'
       )
     
+      ProductMailer.with(user: current_user, product: @mentor, price: @mentor.price).new_purchase.deliver_now
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
