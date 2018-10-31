@@ -206,6 +206,9 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 2 Trello Board*
 ![Day 2 Trello Board](readme-assets/day-2-trello.png)
 
+*Day 3 Trello Board*
+![Day 3 Trello Board](readme-assets/day-3-trello.png)
+
 ## Slack
 
 *Day 1 Slack Channel*
@@ -213,3 +216,5 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 2 Slack Channel*
 ![Day 2 Slack Channel](readme-assets/day-2-slack.png)
+
+*Day 3 Slack Channel*
