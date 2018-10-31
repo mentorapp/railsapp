@@ -9,10 +9,7 @@ class MentorsController < ApplicationController
     @mentor = Mentor.find(params[:id])
   end
 
-  # Called when a user elects to become a mentor - creates a Mentor object and saves it to the database in the mentors table.
   def create
-    # Does this line need to be here?
-    @mentor = Mentor.new(mentor_params)
   end
 
   private
