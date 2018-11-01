@@ -36,7 +36,7 @@
     bottom: 0; 
     margin: auto; 
     max-width: 50%;
-    
+    z-index: 0;
   }
 
   .home-title {
@@ -44,7 +44,7 @@
   }
 
   .home {
-    z-index: 2;
+    z-index: 5;
   }
 
   footer {
@@ -52,5 +52,6 @@
     left: 0;
     bottom: 0;
     width: 100%;
+    padding-top: 120px;
   }
   
