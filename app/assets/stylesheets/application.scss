@@ -54,6 +54,17 @@
     padding-top: 15rem;
   }
 
+  .contact-background {
+    background-image: image_url("niklas-hamann-979078-unsplash.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: -56px;
+    padding-top: 30rem;
+  }
+
   footer {
     position: fixed;
     left: 0;
