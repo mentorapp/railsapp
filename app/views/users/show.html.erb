@@ -26,7 +26,7 @@
   <p>Skills: <%= @mentor.skills %></p>
   <p>Availability: <%= @mentor.availability %></p>
   <p>Price: <%= number_to_currency(@mentor.price / 100.0) %></p>
-  <%= link_to 'Edit', edit_mentor_path(id: current_user.id) %>
+  <%= link_to 'Edit', edit_mentor_path(id: current_user.id), class: "btn btn-primary" %>
 <!-- Edit Mentor Details Link, destroy mentor button -->
   <p>You are booked to mentor the following sessions: </p>
   <% @mentor_bookings.each do |booking| %>
