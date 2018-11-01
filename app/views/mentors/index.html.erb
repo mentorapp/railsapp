@@ -1,70 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Heroic Features - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <!-- Jumbotron Header -->
-    <header class="jumbotron background-image ml-0 mr-0">
-        <div class="container">
-            <h1 class="display-3 over-image">Meet the Mentors!</h1>
-            <p class="lead over-image">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
-        </div>
-    </header>
-
-    <!-- Page Content -->
+<!-- Jumbotron Header -->
+<header class="jumbotron background-image ml-0 mr-0">
     <div class="container">
-
-      <!-- Page Features -->
-      <div class="row text-center">
-      <% @mentors.each_with_index do |mentor, index| %>
-        <% user = mentor.user %>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="card">
-            <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
-            <% if user.avatar.attached? %>
-              <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
-            <% else %>
-              <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
-            <% end %>
-            <div class="card-body">
-              <h4 class="card-title"><%= user.username %></h4>
-              <p class="card-text"><%= user.about_me %></p>
-            </div>
-            <div class="card-footer">
-              <%= link_to 'Show', mentor_path(mentor), class: "btn btn=primary" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
-      </div>
-      <!-- /.row -->
-
+        <h1 class="display-3 over-image">Meet the Mentors!</h1>
+        <p class="lead over-image">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
     </div>
-    <!-- /.container -->
+</header>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Page Content -->
+<div class="container">
 
-  </body>
+  <!-- Page Features -->
+  <div class="row text-center">
+  <% @mentors.each_with_index do |mentor, index| %>
+    <% user = mentor.user %>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card">
+        <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
+        <% else %>
+          <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+        <% end %>
+        <div class="card-body">
+          <h4 class="card-title"><%= user.username %></h4>
+          <p class="card-text"><%= user.about_me %></p>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Show', mentor_path(mentor), class: "btn btn-info" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-</html>
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

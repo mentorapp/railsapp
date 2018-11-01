@@ -15,22 +15,22 @@
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="field">
-    <%= form.label :skills %>
-    <%= form.text_field :skills %>
+  <div class="field form-group">
+    <%= form.label :skills %><br />
+    <%= form.text_field :skills, class: "form-control", autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :availability %>
-    <%= form.text_area :availability %>
+  <div class="field form-group">
+    <%= form.label :availability %><br />
+    <%= form.text_area :availability, class: "form-control", autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, value: number_with_precision((mentor.price||0)/100.0, :precision => 2) %>
+  <div class="field form-group">
+    <%= form.label :price %><br />
+    <%= form.text_field :price, value: number_with_precision((mentor.price||0)/100.0, :precision => 2), class: "form-control", autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: "btn btn-primary" %>
   </div>
 <% end %>

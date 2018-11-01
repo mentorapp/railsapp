@@ -1,72 +1,74 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<hr>
+  <hr>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter new email" %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter new email" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= f.label :'New password' %> <br />
+      <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "Enter new password" %>
+      <% if @minimum_password_length %>
+        <small id="emailHelp" class="form-text text-muted"> <%= @minimum_password_length %> characters minimum (leave blank if you don't want to change it)</small>
+      <% end %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "Re-enter new password" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :'username' %><br />
+      <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Enter new username" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :'Avatar' %><br />
+      <%= f.file_field :avatar %>
+    </div> <br>
+
+    <div class="field form-group">
+      <%= f.label :purpose %><br />
+      <%= f.text_area :purpose, autofocus: true, class: "form-control", placeholder: "I'm looking for technical mentorship from a JavaScript expert!" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :'About Me' %><br />
+      <%= f.text_area :about_me, autofocus: true, class: "form-control", placeholder: "I'm a freelance web designer currently self-learning Javascript online." %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autofocus: true, class: "form-control", placeholder: "Current password" %>
+        <small id="emailHelp" class="form-text text-muted"> We need your current password to confirm your changes</small>
+    </div>
+
+    <div>
+      <%= check_box_tag(:mentor) %>
+      <%= label_tag(:mentor, "I want to mentor") %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :'New password' %> <br />
-    <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "Enter new password" %>
-    <% if @minimum_password_length %>
-      <small id="emailHelp" class="form-text text-muted"> <%= @minimum_password_length %> characters minimum (leave blank if you don't want to change it)</small>
-    <% end %>
-  </div>
+  <br>
 
-  <div class="field form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "Re-enter new password" %>
-  </div>
+  <h1>Cancel my account</h1>
 
-  <div class="field form-group">
-    <%= f.label :'username' %><br />
-    <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Enter new username" %>
-  </div>
+  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
-  <div class="field">
-    <%= f.label :'Avatar' %><br />
-    <%= f.file_field :avatar %>
-  </div> <br>
-
-  <div class="field form-group">
-    <%= f.label :purpose %><br />
-    <%= f.text_area :purpose, autofocus: true, class: "form-control", placeholder: "I'm looking for technical mentorship from a JavaScript expert!" %>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :'About Me' %><br />
-    <%= f.text_area :about_me, autofocus: true, class: "form-control", placeholder: "I'm a freelance web designer currently self-learning Javascript online." %>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :current_password %>
-    <%= f.password_field :current_password, autofocus: true, class: "form-control", placeholder: "Current password" %>
-      <small id="emailHelp" class="form-text text-muted"> We need your current password to confirm your changes</small>
-  </div>
-
-  <div>
-    <%= check_box_tag(:mentor) %>
-    <%= label_tag(:mentor, "I want to mentor") %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<br>
-
-<h1 >Cancel my account</h1>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
-
-<%= link_to "Back", :back, class: "btn btn-primary" %>
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
+</div>

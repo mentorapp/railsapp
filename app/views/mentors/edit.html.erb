@@ -1,3 +1,11 @@
-<h1>Edit My Mentor Profile</h1>
+<div class="container">
+  <h1>Edit My Mentor Profile</h1>
 
-<%= render 'form', mentor: @mentor %>
+  <%= render 'form', mentor: @mentor %>
+
+  <h1>Delete My Mentor Profile</h1>
+
+  <p>Would you like to remove your mentor profile from MyMentor? You will still be able to log in and use the app as a mentee, but all your mentor details will be destroyed.</p>
+
+  <%= button_to "Delete my mentor profile", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+</div>
