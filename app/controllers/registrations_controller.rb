@@ -9,14 +9,4 @@ class RegistrationsController < Devise::RegistrationsController
     end
     redirect_to root_path
   end
-
-  private
-
-  # def user_params
-  #   params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar, :purpose, :about_me)
-  # end
-
-  # def account_update_params
-  #   params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
-  # end
 end

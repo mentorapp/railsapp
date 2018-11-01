@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :password %> <br />
+    <%= f.label :'New password' %> <br />
     <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "Enter new password" %>
     <% if @minimum_password_length %>
       <small id="emailHelp" class="form-text text-muted"> <%= @minimum_password_length %> characters minimum (leave blank if you don't want to change it)</small>
