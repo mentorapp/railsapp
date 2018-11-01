@@ -1,14 +1,14 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">MyMentor</a>
+    <%= link_to('MyMentor', root_path, class: "navbar-brand") %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
 
-        <li class="nav-item active">
+        <li class="nav-item <%= 'active' if current_page?(root_path)%>">
             <%= link_to('Home', root_path, class: "nav-link") %>
         </li>
         
@@ -16,24 +16,24 @@
           <% if user_signed_in? %>
             <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>        
           <% else %>
-            <%= link_to('Login / Sign Up', new_user_session_path, class: "nav-link")  %>  
+            <%= link_to('Login / Sign Up', new_user_session_path, class: "nav-link")%>  
           <% end %>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item <%= 'active' if current_page?(mentors_path)%>">
           <% if user_signed_in? %>
             <%= link_to 'Mentors', mentors_path, class: "nav-link"%>
           <% end %>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item <%= 'active' if current_page?(users_show_path)%>">
           <% if user_signed_in? %>
             <%= link_to 'My Info', users_show_path, class: "nav-link"%>
           <% end %>
         </li>
 
-        <li class="nav-item">
-          <%= link_to 'Contact', welcome_contact_path, class: "nav-link"%>
+        <li class="nav-item <%= 'active' if current_page?(welcome_contact_path)%>">
+          <%= link_to 'Contact', welcome_contact_path, class: "nav-link "%>
         </li>
 
       </ul>
