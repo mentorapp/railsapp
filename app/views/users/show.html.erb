@@ -1,43 +1,45 @@
-<h1>My Dashboard</h1>
-<p><%= @user.username %></p>
-<!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
-<% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
-<% else %>
-  <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
-<% end %>
-
-<!-- This page should have the users information, edit and destroy button for their user profile and their mentor profile if they have one, list of bookings they are involved with and edit info for those bookings depending on their permissions -->
-
-<h2>About You</h2>
-
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
-<p>About Me: <%= @user.about_me %></p>
-<p>Purpose: <%= @user.purpose %></p>
-
-<%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary" %>
-
-<!-- Devise link to edit these details, destroy link to remove them as a user -->
-
-<% unless @my_mentor_profile.nil? %>
-  <h2>Your Mentor Details</h2>
-  <p>Skills: <%= @my_mentor_profile.skills %></p>
-  <p>Availability: <%= @my_mentor_profile.availability %></p>
-  <p>Price: <%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
-  <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
-<!-- destroy mentor profile button -->
-  <p>You are booked to mentor the following sessions: </p>
-  <% @mentor_bookings.each do |booking| %>
-<!-- Edit and destroy buttons for bookings? -->
-    <p><%= booking.mentee_id%></p>
+<div class="container">
+  <h1>My Dashboard</h1>
+  <p><%= @user.username %></p>
+  <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
+  <% else %>
+    <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
   <% end %>
-<% end %>
 
-<% if @mentee_bookings.length > 0 %>
-  <p>You are booked to be mentored in the following sessions: </p>
-  <% @mentee_bookings.each do |booking| %>
+  <!-- This page should have the users information, edit and destroy button for their user profile and their mentor profile if they have one, list of bookings they are involved with and edit info for those bookings depending on their permissions -->
+
+  <h2>About You</h2>
+
+  <p>Username: <%= @user.username %></p>
+  <p>Email: <%= @user.email %></p>
+  <p>About Me: <%= @user.about_me %></p>
+  <p>Purpose: <%= @user.purpose %></p>
+
+  <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary" %>
+
+  <!-- Devise link to edit these details, destroy link to remove them as a user -->
+
+  <% unless @my_mentor_profile.nil? %>
+    <h2>Your Mentor Details</h2>
+    <p>Skills: <%= @my_mentor_profile.skills %></p>
+    <p>Availability: <%= @my_mentor_profile.availability %></p>
+    <p>Price: <%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
+    <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
+  <!-- destroy mentor profile button -->
+    <p>You are booked to mentor the following sessions: </p>
+    <% @mentor_bookings.each do |booking| %>
   <!-- Edit and destroy buttons for bookings? -->
-    <p><%= booking.mentor_id%></p>
+      <p><%= booking.mentee_id%></p>
+    <% end %>
   <% end %>
-<% end %>
+
+  <% if @mentee_bookings.length > 0 %>
+    <p>You are booked to be mentored in the following sessions: </p>
+    <% @mentee_bookings.each do |booking| %>
+    <!-- Edit and destroy buttons for bookings? -->
+      <p><%= booking.mentor_id%></p>
+    <% end %>
+  <% end %>
+</div>
