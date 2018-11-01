@@ -7,7 +7,7 @@
  */
 
  body {
-    padding-top: 54px;
+    padding-bottom: 3rem;
   }
   
   @media (min-width: 992px) {
@@ -44,7 +44,14 @@
   }
 
   .home {
-    z-index: 5;
+    background-image: image_url("homepage-background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: -56px;
+    padding-top: 15rem;
   }
 
   footer {
@@ -52,6 +59,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding-top: 120px;
+    height: 3rem;
+    line-height: 3rem;
+    margin-top: 3rem;
   }
   

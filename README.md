@@ -4,6 +4,23 @@
 
 Rails App by Simon, Corey and Vanessa.
 
+## Contents
+
+[Working Info](#working-info)
+
+[Short Answer Questions](#short-answer-questions)
+
+[Design Planning](#design-planning)
+
+[Inspiration](#inspiration)
+
+[Team Communication](#team-communication)
+
+
+## Working Info
+
+---
+
 **Workflow Info for Us**
 
 Team Questions Thurs Nov 1st
@@ -76,7 +93,9 @@ Problems this app will solve:
 • Code of conduct
 • Code of conduct violations
 
-# Short Answer Questions
+## Short Answer Questions
+
+---
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
@@ -106,6 +125,8 @@ Our database consists of 4 tables. A User table that stores the user's 'Username
 
 ## 12. Discuss the database relations to be implemented.
 
+The Mentor table has a foreign key of user_id that references the User table. The Booking table is a self join on the id of the user table, with one side of the join labelled mentor_id and the other mentee_id, i.e. a user can be a mentor or a mentee at different times in their use of the app, but they will always be a user.
+
 ## 13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.
 
 The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user
@@ -113,7 +134,7 @@ The Mentor table is associated with the User table with user_id reference as it 
 ## 14. Provide your database schema design.
 
 *Database Schema - Initial*
-Green tables are our MVP, red tables are the beginnings of a plan for some addition features we hope to get to.
+Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
 ![Database Schema - Initial](readme-assets/MentorMe_Database.png)
 
 ## 15. Provide User stories for your App.
@@ -138,7 +159,7 @@ As a user I should be able to:
 
 During Sprint Planning at the start of the project we created tasks on our team trello board. Each morning during the stand-up, team members choose what they would like to work on and the task is allocated to them on Trello and moved to the 'Doing' list. At the end of the day we come together and assess the progress of the items as a team, deciding which ones are ready to go in the 'Done' list and which should remain for the following day.
 
-Sometimes we choose to pair or mob program, especially for the initial setup components of the app design. We prefer to work together in person, so sometimes once someone chooses a task, either or both remaining team members choose to join them on the task because they are also interested and would like to use the opportinity to work on it together to learn.
+Sometimes we choose to pair or mob program, especially for crucial components of the app design. We prefer to work together in person, so sometimes once someone chooses a task, either or both remaining team members choose to join them on the task because they are also interested and would like to use the opportinity to work on it together to learn.
 
 ## 18. Discuss how Agile methodology is being implemented in your project.
 
@@ -157,9 +178,11 @@ Sometimes we choose to pair or mob program, especially for the initial setup com
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
 
-# Design Planning
+## Design Planning
 
-## Brand Attributes
+---
+
+**Brand Attributes**
 
 inspiration, collaboration, networking
 aspirational tone
@@ -206,7 +229,8 @@ Once we were clear on our brand attributes and on wanting to use Bootstrap to ma
 [Link to Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)
 
 
-# Team Communication
+## Team Communication
+---
 
 We elected to work in person for the majority of the time, confining our required hours to the standard 9-5. This meant that in addition to the morning standup we talked regularly throughout the day, ensuring our local repos were up to date and that we were making good use of branches and of our time. We also used pair and mob programming on particularly tricky parts of the project.
 
@@ -223,6 +247,9 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 3 Trello Board*
 ![Day 3 Trello Board](readme-assets/day-3-trello.png)
 
+*Day 4 Trello Board*
+![Day 4 Trello Board](readme-assets/day-4-trello.png)
+
 ## Slack
 
 *Day 1 Slack Channel*
@@ -233,3 +260,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 3 Slack Channel*
 ![Day 3 Slack Channel](readme-assets/day-3-slack.png)
+
+*Day 4 Slack Channel*
+![Day 4 Slack Channel](readme-assets/day-4-slack.png)
