@@ -70,7 +70,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      result = params.require(:booking).permit(:mentor_id, :mentee_id, :price)
+      result = params.require(:booking).permit(:mentor_id, :mentee_id, :price, :charge_id)
       result[:price] = result[:price].to_f * 100.0
       result
     end
