@@ -16,18 +16,18 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :skills %>
-    <%= form.text_field :skills %>
+    <%= form.label :skills %><br />
+    <%= form.text_field :skills, class: "form-control", autofocus: true %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :availability %>
-    <%= form.text_area :availability %>
+    <%= form.label :availability %><br />
+    <%= form.text_area :availability, class: "form-control", autofocus: true %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :price %>
-    <%= form.text_field :price, value: number_with_precision((mentor.price||0)/100.0, :precision => 2) %>
+    <%= form.label :price %><br />
+    <%= form.text_field :price, value: number_with_precision((mentor.price||0)/100.0, :precision => 2), class: "form-control", autofocus: true %>
   </div>
 
   <div class="actions">
