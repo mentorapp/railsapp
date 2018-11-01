@@ -1,36 +1,60 @@
-<% user = @mentor.user %>
-<h1><%= user.username %></h1>
-<!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
-<% if user.avatar.attached? %>
-  <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
-<% else %>
-  <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
 
-<p>Purpose: <%= user.purpose %></p>
-<p>About Me: <%= user.about_me %></p>
+  
+    <!-- Page Content -->
+    <div class="container mt-4">
 
-<p>Skills: <%= @mentor.skills %></p>
-<p>Availability: <%= @mentor.availability %></p>
-<p>Price: <%= number_to_currency(@mentor.price / 100.0) %></p>
+      <div class="row">
 
-<!-- Book now button related to Stripe -->
+        <div class="col-md-6">
 
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
+          <div class="card-">
+          <% user = @mentor.user %>
+
+          <div class="text-center"></div>
+          <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar, class: "card-img-top img-fluid", alt: "" %>
+            <% else %>
+              <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
+            <% end %>
+            <div class="card-body">
+              <h1 class="card-title"><%= user.username %></h1>
+              <h4><%= number_to_currency(@mentor.price / 100.0) %></h4><small>per session</small>
+              <div class="mt-3"></div>
+              <h6>Purpose:</h6><p class="card-text"><%= user.purpose %></p>
+              <h6>About Me:</h6><p class="card-text"><%= user.about_me %></p>
+              <h6>Skills:</h6><p class="card-text"><%= @mentor.skills %></p>
+              <h6>Availability:</h6><p class="card-text"><%= @mentor.availability %></p>
+              <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+              4.0 stars
+              
+              <!-- Book now button related to Stripe -->
+              <div class="mt-3">
+              <%= form_tag charges_path do %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+
+              <%= hidden_field_tag(:mentor_id, @mentor.id) %>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Booking with: <%= @mentor.user.username %>"
+                      data-amount="<%= @mentor.price %>"
+                      data-currency="aud"
+                      data-locale="auto"></script>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-9 -->
       </div>
-    <% end %>
-  </article>
-
-    <%= hidden_field_tag(:mentor_id, @mentor.id) %>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Booking with: <%= @mentor.user.username %>"
-          data-amount="<%= @mentor.price %>"
-          data-currency="aud"
-          data-locale="auto"></script>
-<% end %>
+    </div>
+    <!-- /.container -->
