@@ -4,6 +4,14 @@
 
 Rails App by Simon, Corey and Vanessa.
 
+**Workflow Info for Us**
+
+Team Questions Thurs Nov 1st
+
+Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (I know email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
+
+Decision: do emails first and then shoot for a booking system.
+
 ## Git Workflow
 
 We set the project up as a GitHub organisation, aiming to make the organisation repo the source of truth. When working on our own machines, we will start by doing the following:
@@ -28,7 +36,13 @@ rails db:create
 rails db:migrate
 rails db:seed
 
+## Heroku
+
+- Deploy either in the morning or early in the afternoon as this is less stressful than at 4.45pm!
+
 ## Sprint Planning
+
+Friday Oct 26 and Monday Oct 29
 
 App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
 
@@ -206,6 +220,9 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 2 Trello Board*
 ![Day 2 Trello Board](readme-assets/day-2-trello.png)
 
+*Day 3 Trello Board*
+![Day 3 Trello Board](readme-assets/day-3-trello.png)
+
 ## Slack
 
 *Day 1 Slack Channel*
@@ -213,3 +230,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 2 Slack Channel*
 ![Day 2 Slack Channel](readme-assets/day-2-slack.png)
+
+*Day 3 Slack Channel*
+![Day 3 Slack Channel](readme-assets/day-3-slack.png)

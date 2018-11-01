@@ -17,9 +17,11 @@ class ChargesController < ApplicationController
         :description => @mentor.price,
         :currency    => 'aud'
       )
-    
-    # Not using product mailer?
-    #   ProductMailer.with(user: current_user, product: @mentor, price: @mentor.price).new_purchase.deliver_now
+
+    # This is commented out until we have a registered MailGun domain that can send to any email address.
+    #@mentor = Mentor.find(1)
+    #BookingMailer.with(mentee: current_user, mentor: @mentor).new_booking_mentor.deliver_now
+    #BookingMailer.with(mentee: current_user, mentor: @mentor).new_booking_mentee.deliver_now
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
