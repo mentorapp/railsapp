@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.persisted?
       if resource.active_for_authentication?
         if params[:mentor] == "1"
-          Mentor.create({user_id: resource.id})
+          Mentor.create({user_id: resource.id, price: 100})
         end
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
@@ -27,9 +27,12 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     if params[:mentor] == '1'
-      Mentor.create({user_id: current_user.id})
+      mentor = Mentor.find_by(user_id: current_user.id)
+      if mentor.nil? == true
+        Mentor.create({user_id: current_user.id, price: 100})
+      end
     end
-    
+
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
