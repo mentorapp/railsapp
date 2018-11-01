@@ -20,14 +20,13 @@
 
 <!-- Devise link to edit these details, destroy link to remove them as a user -->
 
-<% if @mentor_bookings.length > 0 %>
-  <% @mentor = Mentor.find(current_user.id) %>
+<% unless @my_mentor_profile.nil? %>
   <h2>Your Mentor Details</h2>
-  <p>Skills: <%= @mentor.skills %></p>
-  <p>Availability: <%= @mentor.availability %></p>
-  <p>Price: <%= number_to_currency(@mentor.price / 100.0) %></p>
-  <%= link_to 'Edit', edit_mentor_path(id: current_user.id), class: "btn btn-primary" %>
-<!-- Edit Mentor Details Link, destroy mentor button -->
+  <p>Skills: <%= @my_mentor_profile.skills %></p>
+  <p>Availability: <%= @my_mentor_profile.availability %></p>
+  <p>Price: <%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
+  <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
+<!-- destroy mentor profile button -->
   <p>You are booked to mentor the following sessions: </p>
   <% @mentor_bookings.each do |booking| %>
 <!-- Edit and destroy buttons for bookings? -->

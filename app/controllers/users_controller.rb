@@ -3,6 +3,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @mentors = Mentor.all
+    @my_mentor_profile = nil
+    @mentors.each do |mentor|
+      if mentor.user_id == current_user.id
+        @my_mentor_profile = mentor
+      end
+    end
     @bookings = Booking.all
     @mentor_bookings = []
     @mentee_bookings = []
