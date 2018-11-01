@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
     
     def create
 
-      @mentor.price = params[:mentor][:price].to_f * 100
+      @mentor = Mentor.find(params[:mentor_id])
     
       customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
