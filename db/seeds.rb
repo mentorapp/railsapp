@@ -26,7 +26,7 @@ mentors = [
   {user_id: 2,
   skills: "General tech career in Melbourne",
   availability: "CBD lunch and after work on weekdays",
-  price: 0},
+  price: 100},
   {user_id: 3,
   skills: "React, JS, Node",
   availability: "Weekday evenings, Saturday afternoons",
@@ -36,7 +36,7 @@ mentors = [
 bookings = [
   {mentor_id: 2,
   mentee_id: 1,
-  price: 0
+  price: 100
   },
   {mentor_id: 3,
   mentee_id: 1,
