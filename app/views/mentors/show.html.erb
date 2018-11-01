@@ -1,19 +1,29 @@
 <!-- Page Content -->
 <div class="container mt-4">
+  
+    <!-- Page Content -->
 
-  <div class="row">
+<%= image_tag("kaleidico-754543-unsplash.jpg", class: "bg", alt: "") %>
+
+    <div class="container mt-5 mb-5">
+
+      <div class="row justify-content-center">
 
     <div class="col-md-6">
+
 
       <div class="card-">
       <% user = @mentor.user %>
 
-      <div class="text-center"></div>
-      <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, class: "card-img-top img-fluid", alt: "" %>
-        <% else %>
-          <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
+          <div class="card pl-5 pr-5 pt-5 pb-5">
+          <% user = @mentor.user %>
+
+          <div class="text-center"></div>
+          <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar, class: "card-img-top img-fluid", alt: "" %>
+            <% else %>
+              <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
         <% end %>
         <div class="card-body">
           <h1 class="card-title"><%= user.username %></h1>
@@ -34,6 +44,7 @@
               <div id="error_explanation">
                 <p><%= flash[:error] %></p>
               </div>
+
             <% end %>
           </article>
 
