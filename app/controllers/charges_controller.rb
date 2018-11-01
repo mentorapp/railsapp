@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
     
     def create
 
-      @mentor.price = params[:mentor][:price].to_f * 100
+      @mentor = Mentor.find(params[:mentor_id])
     
       customer = Stripe::Customer.create(
         :email => params[:stripeEmail],
@@ -18,7 +18,8 @@ class ChargesController < ApplicationController
         :currency    => 'aud'
       )
     
-      ProductMailer.with(user: current_user, product: @mentor, price: @mentor.price).new_purchase.deliver_now
+    # Not using product mailer?
+    #   ProductMailer.with(user: current_user, product: @mentor, price: @mentor.price).new_purchase.deliver_now
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
