@@ -93,6 +93,22 @@ Problems this app will solve:
 • Code of conduct
 • Code of conduct violations
 
+*Charging People with Stripe and Getting People Paid*
+Charging people and paying others: Stripe used to have a way to do this with someone's band card but even then we would be storing people's bank cards. It looks like Stripe Connect sorts all this out for you - user verification, selling, etc.
+In terms of people being happy to mentor for no charge, it may be that their button is just one to make a booking and doesn't talk to Stripe, so Stripe connect is only involved if people wish to charge for their services. That way people only have to sign up for a Stripe seller account if they want to make money using the service. Looks like the standard service is the one that would work best for us - doesn't cost anything extra and integration is apparently pretty easy. Given that our user base is tech people, they should be tech savvy enough to create a Stripe account if they want to charge for their services on the platform. 
+
+Chatted as a team and decided to implement Stripe Connect for any payments over 50c (and mentors will need to have a Stripe Account to be paid). If they choose not to be paid, the button to book them will be a standard rails button, not a Stripe button. (The is also good as you won't have to enter card details and be charged 50c if they mentor doesn't want to be paid.)
+
+- added a stripe charge id to bookings table
+- added a stripe user id to mentors table for when they authorise their account (we only support standard Stripe accounts - they require us to take the least responsibility which is good because we are new developers)
+
+Info for Mentors Signing up:
+- That they’ll need to create and maintain their Stripe account.
+- That they’ll need to handle chargebacks and all customer service issues.
+- Who is responsible for paying the Stripe fees.
+- What, if any, fees the platform charges.
+
+
 ## Short Answer Questions
 
 ---
