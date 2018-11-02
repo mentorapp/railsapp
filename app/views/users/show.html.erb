@@ -18,6 +18,8 @@
 <div class="container">
   <h1 class="pink">My Dashboard</h1>
   <hr>
+  <p><%= notice %></p>
+  <p><%= @user.username %></p>
   <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
@@ -51,6 +53,14 @@
     <% @mentor_bookings.each do |booking| %>
   <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentee_id%></p>
+    <% end %>
+    <!-- Stripe Connect SignUp Link - if a mentor wishes to charge they need to sign up for a Standard Stripe Account.
+    First part of the if shows the signup link if they haven't signed up. -->
+    <% if @my_mentor_profile.stripe_user_id == nil %>
+      <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= ENV['CLIENT_ID']%>&scope=read_write" class="stripe-connect light-blue"><span>Connect with Stripe</span></a>
+    <% else %>
+      <p>You have connected your Stripe Account and can receive payments.</p>
+      <p>Stripe User Id: <%= @my_mentor_profile.stripe_user_id %></p>
     <% end %>
   <% end %>
 
