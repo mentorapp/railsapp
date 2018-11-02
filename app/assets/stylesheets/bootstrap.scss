@@ -67,6 +67,7 @@
     color: #212529;
     text-align: left;
     background-color: #fff;
+    min-height: 100%;
   }
   
   [tabindex="-1"]:focus {
@@ -389,6 +390,23 @@
   
   h6, .h6 {
     font-size: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .pink {
+    color: #FB9179;
+  }
+
+  .space {
+    padding-top: 1rem;
+  }
+
+  .space2 {
+    padding-top: 2rem;
+  }
+
+  .space3 {
+    padding-top: 3rem;
   }
   
   .lead {
@@ -398,25 +416,25 @@
   
   .display-1 {
     font-size: 6rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
   }
   
   .display-2 {
     font-size: 5.5rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
   }
   
   .display-3 {
     font-size: 4.5rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
   }
   
   .display-4 {
     font-size: 3.5rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
   }
 
@@ -4319,8 +4337,7 @@
   .navbar-transparent .navbar-nav .active > .nav-link,
   .navbar-transparent .navbar-nav .nav-link.show,
   .navbar-transparent .navbar-nav .nav-link.active {
-    color: #F8F7F0;
-    background-color: rgba(250, 250, 250, 0.4);
+    color: #FB9179;
   }
   
   .navbar-transparent .navbar-toggler {
@@ -4358,7 +4375,6 @@
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
   }
   
@@ -4860,8 +4876,6 @@
   .jumbotron {
     padding: 5rem 1rem;
     margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
   }
   
   @media (min-width: 576px) {
