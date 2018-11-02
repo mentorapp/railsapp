@@ -20,8 +20,11 @@ class MentorsController < ApplicationController
   end
 
   def update
-    @mentor.update(mentor_params)
-    redirect_to users_show_path
+    if @mentor.update(mentor_params)
+      redirect_to users_show_path
+    else
+      render :edit
+    end
   end
 
   def destroy
