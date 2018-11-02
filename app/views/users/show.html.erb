@@ -1,6 +1,23 @@
+<div class="container mt-4">
+  
+    <!-- Page Content -->
+
+<%= image_tag("bonnie-kittle-186235-unsplash.jpg", class: "bg", alt: "") %>
+
+    <div class="container mt-5 mb-5">
+
+      <div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+
+      <div class="card-">
+
+      <div class="card pl-5 pr-5 pt-5 pb-5">
+
 <div class="container">
-  <h1>My Dashboard</h1>
-  <p><%= @user.username %></p>
+  <h1 class="pink">My Dashboard</h1>
+  <hr>
   <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
@@ -10,25 +27,27 @@
 
   <!-- This page should have the users information, edit and destroy button for their user profile and their mentor profile if they have one, list of bookings they are involved with and edit info for those bookings depending on their permissions -->
 
-  <h2>About You</h2>
+  <h2 class="space3">About You</h2>
 
-  <p>Username: <%= @user.username %></p>
-  <p>Email: <%= @user.email %></p>
-  <p>About Me: <%= @user.about_me %></p>
-  <p>Purpose: <%= @user.purpose %></p>
+  <h6>Username:</h6><p><%= @user.username %></p>
+  <h6>Email:</h6><p><%= @user.email %></p>
+  <h6>About Me:</h6><p><%= @user.about_me %></p>
+  <h6>Purpose:</h6><p><%= @user.purpose %></p>
 
   <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary" %>
 
   <!-- Devise link to edit these details, destroy link to remove them as a user -->
+<hr>
 
   <% unless @my_mentor_profile.nil? %>
-    <h2>Your Mentor Details</h2>
-    <p>Skills: <%= @my_mentor_profile.skills %></p>
-    <p>Availability: <%= @my_mentor_profile.availability %></p>
-    <p>Price: <%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
+    <h2 class="space1">Your Mentor Details</h2>
+    <h6>Skills:</h6><p><%= @my_mentor_profile.skills %></p>
+    <h6>Availability:</h6><p><%= @my_mentor_profile.availability %></p>
+    <h6>Price:</h6><p><%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
     <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
   <!-- destroy mentor profile button -->
-    <p>You are booked to mentor the following sessions: </p>
+  <hr>
+    <h6>You are booked to mentor the following sessions: </h6>
     <% @mentor_bookings.each do |booking| %>
   <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentee_id%></p>
@@ -42,4 +61,10 @@
       <p><%= booking.mentor_id%></p>
     <% end %>
   <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>

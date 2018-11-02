@@ -1,9 +1,10 @@
+
 <!-- Page Content -->
 <div class="container mt-4">
   
     <!-- Page Content -->
 
-<%= image_tag("kaleidico-754543-unsplash.jpg", class: "bg", alt: "") %>
+<%= image_tag("rawpixel-323215-unsplash.jpg", class: "bg", alt: "") %>
 
     <div class="container mt-5 mb-5">
 
@@ -26,7 +27,7 @@
               <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
         <% end %>
         <div class="card-body">
-          <h1 class="card-title"><%= user.username %></h1>
+          <h1 class="card-title pink"><%= user.username %></h1>
           <h4><%= number_to_currency(@mentor.price / 100.0) %></h4><small>per session</small>
           <div class="mt-3"></div>
           <h6>Purpose:</h6><p class="card-text"><%= user.purpose %></p>
