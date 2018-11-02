@@ -7,8 +7,10 @@ ruby '2.4.1'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "aws-sdk-s3", require: false
-
+# Bootstrap
 gem 'bootstrap', '~> 4.1.3'
+# Bootstrap depends on this gem
+gem 'jquery-rails'
 # Gem required to implement Stripe Connect in the marketplace.
 gem 'stripe'
 # For posting to stripe and getting a response
@@ -74,5 +76,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.5"
-
-gem 'jquery-rails'
