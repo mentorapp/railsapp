@@ -14,7 +14,7 @@ gem 'jquery-rails'
 # Gem required to implement Stripe Connect in the marketplace.
 gem 'stripe'
 # For posting to stripe and getting a response
-gem 'httparty', '~> 0.1.0'
+gem 'httparty', '>= 0.10.0'
 # HTTParty uses JSON gem
 gem 'json', '~> 2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
