@@ -115,11 +115,14 @@ Info for Mentors Signing up:
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
-
-
 ## 2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
 
+MyMentor is a platform that bridges mentors and mentees in the technology industry together. MyMentor is the solution to the lack of mentorship services outside trading hours. There are many mentees seeking mentors to develop their hard skills, soft skills and cultural understanding, whereas mentors can improve their soft skills and a means to give back to the community.
+<!-- MyMentor may expand to other industries -->
+
 ## 3. Describe the project will you be conducting and how. your App will address the needs.
+
+MyMentor will connect a mentor and mentee through bookings. Users will be able to signup and explore the plethora of mentors and book a mentor that is suitable. Mentors have the freedom to charge their mentees depending on their purpose. Mentees have the option to mentor, and mentors can forfeit their positions. 
 
 ## 4. Describe the network infrastructure the App may be based on.
 
@@ -127,7 +130,7 @@ Info for Mentors Signing up:
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
 
-Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is appropriate for the user's objective.
+We chose PostgreSQL as our database because it provides a rich variety of data types and handles large amounts of data very efficiently, even with complex queries. It is also open-source, therefore free and supported by a strong community. However, with its extensive features, it may be an excessive database for simpler queries. Many users have reported the documentation to be lacking and needs improvement. 
 
 ## 7. Identify and describe the production database setup (i.e. postgres instance).
 
@@ -145,7 +148,7 @@ The Mentor table has a foreign key of user_id that references the User table. Th
 
 ## 13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.
 
-The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user
+The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user. The Booking table is a self-joining table that holds two user_ids from the User table, one from the mentee and the other from the mentor (both are users). 
 
 ## 14. Provide your database schema design.
 
@@ -285,3 +288,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 5 Slack Channel*
 ![Day 4 Slack Channel](readme-assets/day-5-slack.png)
+
+
+<!-- Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. -->
