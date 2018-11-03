@@ -7,7 +7,7 @@
  */
 
  body {
-    padding-bottom: 3rem;
+    padding-top: 56px;
   }
   
   @media (min-width: 992px) {
@@ -39,7 +39,9 @@
   }
   
   .home-title {
+    font-size: 3.25rem;
     color: #F8F7F0;
+    padding-bottom: 8rem;
   }
 
   .home {
@@ -50,7 +52,6 @@
     background-size: cover;
     position: relative;
     margin-top: -56px;
-    padding-top: 30rem;
     margin-bottom: -56px;
   }
 
@@ -62,7 +63,6 @@
     background-size: cover;
     position: relative;
     margin-top: -56px;
-    padding-top: 30rem;
     margin-bottom: -56px;
   }
 
