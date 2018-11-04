@@ -126,6 +126,8 @@ MyMentor will connect a mentor and mentee through bookings. Users will be able t
 
 ## 4. Describe the network infrastructure the App may be based on.
 
+Heroku is a service that delivers apps for developers that focuses on handling the hardware and server elements. One of the benefits of Heroku is that it provides a PostgreSQL database for the user which is both secure and scalable. Furthermore, there is a healthy variety of powerful add-ons that can be utilized to help their users. All in all, Heroku is a hosting platform whose sole purpose is to allow their users to focus primarily on their apps.
+
 ## 5. Identify and describe the software to be used in your App.
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
@@ -182,9 +184,17 @@ Sometimes we choose to pair or mob program, especially for crucial components of
 
 ## 18. Discuss how Agile methodology is being implemented in your project.
 
+Agile was implemented in our projects in the form of scrum and kanban. We communicated daily face to face and also through [slack](##-Slack).
+
+At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](##-15.-Provide-User-stories-for-your-App.).
+
+Kanban was essential to visualize our workflow. We used [Trello](##-Trello) in our project, and have divided the the workflow into "To do", "Doing", "Design", "Build", "Deploy" and "Done". 
+
 ## 19. Provide an overview and description of your Source control process.
 
+Our git workflow can be viewed [here](##Git-Workflow).
 
+[Github organization](https://github.com/mentorapp/railsapp)
 
 ## 20. Provide an overview and description of your Testing process.
 
@@ -288,6 +298,5 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 5 Slack Channel*
 ![Day 4 Slack Channel](readme-assets/day-5-slack.png)
-
 
 <!-- Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. -->
