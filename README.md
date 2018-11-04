@@ -192,6 +192,10 @@ Kanban was essential to visualize our workflow. We used [Trello](##-Trello) in o
 
 ## 19. Provide an overview and description of your Source control process.
 
+Our git workflow can be viewed [here](##Git-Workflow).
+
+[Github organization](https://github.com/mentorapp/railsapp)
+
 ## 20. Provide an overview and description of your Testing process.
 
 ## 21. Discuss and analyse requirements related to information system security.
@@ -294,6 +298,5 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 5 Slack Channel*
 ![Day 4 Slack Channel](readme-assets/day-5-slack.png)
-
 
 <!-- Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. -->
