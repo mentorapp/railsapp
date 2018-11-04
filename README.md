@@ -184,11 +184,11 @@ Sometimes we choose to pair or mob program, especially for crucial components of
 
 ## 18. Discuss how Agile methodology is being implemented in your project.
 
-Agile was implemented in our projects in the form of scrum and kanban. We communicated daily face to face and also through [slack](##-Slack).
+Agile was implemented in our projects in the form of scrum and kanban. We communicated daily face to face and also through [slack](##Slack).
 
-At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](##-15.-Provide-User-stories-for-your-App.).
+At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](##15.-Provide-User-stories-for-your-App.).
 
-Kanban was essential to visualize our workflow. We used [Trello](##-Trello) in our project, and have divided the the workflow into "To do", "Doing", "Design", "Build", "Deploy" and "Done". 
+Kanban was essential to visualize our workflow. We used [Trello](##Trello) in our project, and have divided the the workflow into "To do", "Doing", "Design", "Build", "Deploy" and "Done". 
 
 ## 19. Provide an overview and description of your Source control process.
 
