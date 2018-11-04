@@ -126,6 +126,8 @@ MyMentor will connect a mentor and mentee through bookings. Users will be able t
 
 ## 4. Describe the network infrastructure the App may be based on.
 
+Heroku is a service that delivers apps for developers that focuses on handling the hardware and server elements. One of the benefits of Heroku is that it provides a PostgreSQL database for the user which is both secure and scalable. Furthermore, there is a healthy variety of powerful add-ons that can be utilized to help their users. All in all, Heroku is a hosting platform whose sole purpose is to allow their users to focus primarily on their apps.
+
 ## 5. Identify and describe the software to be used in your App.
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
