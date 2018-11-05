@@ -214,11 +214,19 @@ Our git workflow can be viewed [here](##Git-Workflow).
 
 ## 20. Provide an overview and description of your Testing process.
 
+Vanessa
+
 ## 21. Discuss and analyse requirements related to information system security.
+
+Simon
 
 ## 22. Discuss methods you will use to protect information and data.
 
+Corey
+
 ## 23. Research what your legal obligations are in relation to handling user data.
+
+Simon
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
