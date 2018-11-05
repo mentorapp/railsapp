@@ -1,3 +1,3 @@
-<%= month_calendar do |date| %>
-  <%= date.day %>
-<% end %>
+<p>You have booked with <%= User.find(@booking.mentor_id).username %> for a session on <%= @booking.start_time %></p>
+
+<%= link_to 'Home', root_path %>

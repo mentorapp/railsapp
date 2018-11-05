@@ -46,6 +46,11 @@
     <% @mentor_bookings.each do |booking| %>
   <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentee_id%></p>
+      <!-- Will be a calendar display hopefully.
+      <%= month_calendar events: @bookings do |date| %>
+        <%= date.day %>
+      <% end %>
+      -->
     <% end %>
     <!-- Stripe Connect SignUp Link - if a mentor wishes to charge they need to sign up for a Standard Stripe Account.
     First part of the if shows the signup link if they haven't signed up. -->

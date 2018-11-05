@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-    
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+
   # GET /products
   # GET /products.json
   def index
@@ -17,6 +18,7 @@ class BookingsController < ApplicationController
   end
 
   # GET /products/1/edit
+  # This is not functional at all
   def edit
     authorize @booking
   end

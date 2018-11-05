@@ -29,6 +29,9 @@ Bookings: do we want to go the route of sending an email, or do we want to go th
 
 Decision: do emails first and then shoot for a booking system.
 
+Code for mentor stars: <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+          4.0 stars
+
 ## Git Workflow
 
 We set the project up as a GitHub organisation, aiming to make the organisation repo the source of truth. When working on our own machines, we will start by doing the following:
