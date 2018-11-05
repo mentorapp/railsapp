@@ -9,11 +9,13 @@ class BookingsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+   @mentor = User.find(@booking.mentor_id)
   end
 
   # GET /products/new
   def new
     @booking = Booking.new
+    raise
   end
 
   # GET /products/1/edit

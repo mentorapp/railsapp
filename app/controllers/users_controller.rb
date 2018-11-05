@@ -34,12 +34,16 @@ class UsersController < ApplicationController
     end
     @bookings = Booking.all
     @mentor_bookings = []
+    @mentors = []
     @mentee_bookings = []
+    @mentees = []
     @bookings.each do |booking|
       if booking.mentor_id == current_user.id
         @mentor_bookings << booking
+        @mentees << User.find(booking.mentee_id)
       elsif booking.mentee_id == current_user.id
         @mentee_bookings << booking
+        @mentors << User.find(booking.mentor_id)
       end
     end
   end

@@ -1,15 +1,15 @@
 <%= form_for @booking do |f| %>
 
-  <%= f.hidden_field(:mentor_id, value: params[:format]) %>
-  <%= f.hidden_field(:mentee_id, value: current_user.id) %>
-  <%= f.hidden_field(:price, value: 100) %>
+  <%= f.text_field(:mentor_id, value: params[:mentor_id]) %>
+  <%= f.text_field(:mentee_id, value: current_user.id) %>
+  <%= f.hidden_field(:price, value: 0) %>
   <div class="field form-group">
-      <%= f.label :'Booking date and time:' %><br />
+      <%= f.label :'Booking date and time' %><br />
       <%= f.datetime_select :start_time, class: "form-control", autofocus: true %>
   </div> <br>
 
   <div class="actions">
-      <%= f.submit "Book Session", class: "btn btn-light" %>
+      <%= f.submit "Book Session", class: "btn btn-primary" %>
   </div>
 
 <% end %>

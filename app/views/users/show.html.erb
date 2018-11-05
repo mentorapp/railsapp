@@ -58,14 +58,17 @@
     <% @mentor_bookings.each do |booking| %>
   <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentee_id%></p>
+      <% @mentor_bookings.each_with_index do |booking, index| %>
+      <p>You have a booking with: <%= @mentees[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
+    <% end %>
     <% end %>
   <% end %>
 
   <% if @mentee_bookings.length > 0 %>
     <h3>Mentee Sessions</h3>
     <p>You are booked to be mentored in the following sessions: </p>
-    <% @mentee_bookings.each do |booking| %>
-      <p>You have a booking with: <%= User.find(booking.mentor_id).username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
+    <% @mentee_bookings.each_with_index do |booking, index| %>
+      <p>You have a booking with: <%= @mentors[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
     <% end %>
   <% end %>
 
