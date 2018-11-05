@@ -66,6 +66,16 @@
     <% end %>
   <% end %>
 
+  <h3>Reviews given</h3>
+
+  <% if @user.reviews.length > 0 %>
+    <% @user.reviews.each do |review| %>
+      <p><%= review.created_at.strftime("%d/%m/%Y") %> <%= review.content %> to <%= review.mentor.user.username %></p>
+    <% end %>
+    <% else %>
+    <p>You haven't given a review, please give a review</p>
+  <% end %>
+
 </div>
 </div>
 </div>
