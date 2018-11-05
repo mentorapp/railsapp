@@ -21,11 +21,13 @@
 
           <div class="text-center"></div>
           <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+            <div class="container">
             <% if user.avatar.attached? %>
               <%= image_tag user.avatar, class: "card-img-top img-fluid", alt: "" %>
             <% else %>
               <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
-        <% end %>
+            <% end %>
+            </div>
         <div class="card-body">
           <h1 class="card-title pink"><%= user.username %></h1>
           <h4><%= number_to_currency(@mentor.price / 100.0) %></h4><small>per session</small>
@@ -44,13 +46,12 @@
                 <div id="error_explanation">
                   <p><%= flash[:error] %></p>
                 </div>
-
               <% end %>
             </article>
 
             <%= hidden_field_tag(:mentor_id, @mentor.id) %>
             <div class="field form-group">
-              <p>'Booking date and time:' <p><br />
+              <p>Booking date and time: <p><br />
               <%= datetime_select :start_time, class: "form-control", autofocus: true %>
             </div> <br>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -61,8 +62,19 @@
                     data-locale="auto"></script>
             <% end %>
             </div>
-          <% else %>
-            <%= link_to 'New Free Booking', new_booking_path(@mentor)%>
+            <% else %>
+              <%= link_to 'New Free Booking', new_booking_path(@mentor)%>
+            <% end %>
+
+          <h3>Reviews</h3>
+
+          <% if @mentor.reviews.length > 0 %>
+            <% @mentor.reviews.each do |review| %>
+              <p><%= review.created_at.strftime("%d/%m/%Y") %> <%= review.content %> by <%= review.user.username %></p>
+            <% end %>
+            <% else %>
+            <p>This mentor has not received a review</p>
+          <% end %>
           <% end %>
         </div>
       </div>
