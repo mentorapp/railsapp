@@ -76,3 +76,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.5"
+# Gem to display and book events in a calendar
+gem 'simple_calendar', '~> 2.3'

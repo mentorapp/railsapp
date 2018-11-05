@@ -13,7 +13,6 @@
 <div class="container">
   <h1 class="pink">My Dashboard</h1>
   <hr>
-  <p><%= notice %></p>
   <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
@@ -63,6 +62,7 @@
     <% @mentee_bookings.each do |booking| %>
     <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentor_id%></p>
+
     <% end %>
   <% end %>
 
