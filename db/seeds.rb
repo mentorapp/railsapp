@@ -57,5 +57,5 @@ mentors.each do |mentor|
 end
 
 bookings.each do |booking|
-  Booking.create(mentor_id: booking[:mentor_id], mentee_id: booking[:mentee_id],price: booking[:price])
+  Booking.create(mentor_id: booking[:mentor_id], mentee_id: booking[:mentee_id],price: booking[:price], start_time: Fri, 09 Nov 2018 05:38:00 UTC +00:00)
 end
