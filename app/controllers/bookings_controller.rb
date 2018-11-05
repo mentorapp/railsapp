@@ -25,7 +25,6 @@ class BookingsController < ApplicationController
   # POST /products.json
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
