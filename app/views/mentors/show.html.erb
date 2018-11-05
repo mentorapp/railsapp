@@ -67,7 +67,8 @@
                     data-locale="auto"></script>
             <% end %>
           <% else %>
-            <%= link_to 'New Free Booking', new_booking_path(@mentor) %>
+            <%= link_to 'New Free Booking', new_booking_path({mentor_id: @mentor.user_id}) %>
+            
           <% end %>
 
           <h3>Reviews</h3>
