@@ -41,15 +41,34 @@
           
           <!-- Book now button related to Stripe -->
           <div class="mt-3">
-          <%= form_tag charges_path do %>
-          <article>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
+          <% if @mentor.stripe_user_id %>
+            <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
 
+              <% end %>
+            </article>
+
+            <%= hidden_field_tag(:mentor_id, @mentor.id) %>
+            <div class="field form-group">
+              <%= f.label :'Booking date and time:' %><br />
+              <%= f.datetime_select :start_time, class: "form-control", autofocus: true %>
+            </div> <br>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Booking with: <%= @mentor.user.username %>"
+                    data-amount="<%= @mentor.price %>"
+                    data-currency="aud"
+                    data-label="Book Now"
+                    data-locale="auto"></script>
             <% end %>
-          </article>
+          <% else %>
+            <%= link_to 'New Free Booking', new_booking_path(@mentor) %>
+          <% end %>
 
           <h3>Reviews</h3>
 
@@ -59,17 +78,6 @@
             <% end %>
             <% else %>
             <p>This mentor has not received a review</p>
-          <% end %>
-
-          <%= hidden_field_tag(:mentor_id, @mentor.id) %>
-
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Booking with: <%= @mentor.user.username %>"
-                  data-amount="<%= @mentor.price %>"
-                  data-currency="aud"
-                  data-label="Book Now"
-                  data-locale="auto"></script>
           <% end %>
           </div>
         </div>
