@@ -34,8 +34,8 @@
           <h6>About Me:</h6><p class="card-text"><%= user.about_me %></p>
           <h6>Skills:</h6><p class="card-text"><%= @mentor.skills %></p>
           <h6>Availability:</h6><p class="card-text"><%= @mentor.availability %></p>
-          <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-          4.0 stars
+          <%# <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span> %>
+          <%# 4.0 stars %>
           
           <!-- Book now button related to Stripe -->
           <div class="mt-3">
@@ -48,6 +48,16 @@
 
             <% end %>
           </article>
+
+          <h3>Reviews</h3>
+
+          <% if @mentor.reviews.length > 0 %>
+            <% @mentor.reviews.each do |review| %>
+              <p><%= review.created_at.strftime("%d/%m/%Y") %> <%= review.content %> by <%= review.user.username %></p>
+            <% end %>
+            <% else %>
+            <p>This mentor has not received a review</p>
+          <% end %>
 
           <%= hidden_field_tag(:mentor_id, @mentor.id) %>
 
