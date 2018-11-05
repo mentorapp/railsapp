@@ -3,7 +3,16 @@ class MentorsController < ApplicationController
   before_action :set_mentor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @mentors = Mentor.all
+    if params[:search].present?
+      @mentors = []
+      search = params[:search].capitalize
+      users = User.where("username ILIKE ?", "%#{search}%")
+      @mentors = users.map do |user|
+        Mentor.find_by(user_id: user.id)
+      end 
+    else
+      @mentors = Mentor.all
+    end
   end
 
   def show

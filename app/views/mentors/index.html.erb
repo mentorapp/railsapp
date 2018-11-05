@@ -4,6 +4,15 @@
         <h1 class="display-4 over-image">Meet the Mentors!</h1>
         <p class="lead over-image">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
         <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+
+        <%= form_tag mentors_path, method: :get do %>
+          <p> 
+            <%= text_field_tag :search, params[:search], placeholder: "Enter mentor name" %>
+            <%= button_tag "Search", name: nil %>
+          </p>
+        <% end %>
+
+        <p><%= link_to "Advanced Search", new_search_path %></p>
     </div>
 </header>
 
@@ -13,19 +22,18 @@
 
   <!-- Page Features -->
   <div class="row text-center">
-  <% @mentors.each_with_index do |mentor, index| %>
-    <% user = mentor.user %>
+  <% @mentors.each do |mentor| %>
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card">
         <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, class: "card-img-top", alt: "" %>
+        <% if mentor.user.avatar.attached? %>
+          <%= image_tag mentor.user.avatar, class: "card-img-top", alt: "" %>
         <% else %>
           <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
         <% end %>
         <div class="card-body">
-          <h4 class="card-title"><%= user.username %></h4>
-          <p class="card-text"><%= user.about_me %></p>
+          <h4 class="card-title"><%= mentor.user.username %></h4>
+          <p class="card-text"><%= mentor.user.about_me %></p>
         </div>
         <div class="card-footer">
           <%= link_to 'Show', mentor_path(mentor), class: "btn btn-info" %>
