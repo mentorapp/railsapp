@@ -23,9 +23,9 @@
           <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
             <div class="container">
             <% if user.avatar.attached? %>
-              <%= image_tag user.avatar, class: "card-img-top img-fluid", alt: "" %>
+              <%= image_tag user.avatar, class: "card-img-customize img-fluid", alt: "" %>
             <% else %>
-              <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
+              <%= image_tag("default-user-profile.jpg", class: "card-img-customize img-fluid", alt: "") %>
             <% end %>
             </div>
         <div class="card-body">

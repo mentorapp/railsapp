@@ -115,6 +115,8 @@ Info for Mentors Signing up:
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
+Corey
+
 ## 2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
 
 MyMentor is a platform that bridges mentors and mentees in the technology industry together. MyMentor is the solution to the lack of mentorship services outside trading hours. There are many mentees seeking mentors to develop their hard skills, soft skills and cultural understanding, whereas mentors can improve their soft skills and a means to give back to the community.
@@ -130,19 +132,31 @@ Heroku is a service that delivers apps for developers that focuses on handling t
 
 ## 5. Identify and describe the software to be used in your App.
 
+Vanessa
+
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
 
 We chose PostgreSQL as our database because it provides a rich variety of data types and handles large amounts of data very efficiently, even with complex queries. It is also open-source, therefore free and supported by a strong community. However, with its extensive features, it may be an excessive database for simpler queries. Many users have reported the documentation to be lacking and needs improvement. 
 
 ## 7. Identify and describe the production database setup (i.e. postgres instance).
 
+Simon
+
 ## 8. Describe the architecture of your App.
+
+Vanessa
 
 ## 9. Explain the different high-level components (abstractions) in your App.
 
+Simon
+
 ## 10. Detail any third party services that your App will use.
 
+Vanessa
+
 ## 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
+
+Corey
 
 ## 12. Discuss the database relations to be implemented.
 
@@ -175,6 +189,8 @@ As a user I should be able to:
 • Book a time with a mentor/provide my availability as a mentor
 
 ## 16. Provide Wireframes for your App.
+
+EVERYONE
 
 ## 17. Describe the way tasks are allocated and tracked in your project.
 
