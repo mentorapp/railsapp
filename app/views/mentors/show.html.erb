@@ -54,8 +54,8 @@
 
             <%= hidden_field_tag(:mentor_id, @mentor.id) %>
             <div class="field form-group">
-              <%= f.label :'Booking date and time:' %><br />
-              <%= f.datetime_select :start_time, class: "form-control", autofocus: true %>
+              <%= label_tag :'Booking date and time:' %><br />
+              <%= datetime_local_field :start_time, class: "form-control", autofocus: true %>
             </div> <br>
 
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
