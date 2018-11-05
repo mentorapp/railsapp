@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_02_010334) do
+ActiveRecord::Schema.define(version: 2018_11_05_043501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_11_02_010334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "charge_id"
+    t.datetime "start_time"
     t.index ["mentee_id", "mentor_id"], name: "index_bookings_on_mentee_id_and_mentor_id"
     t.index ["mentor_id", "mentee_id"], name: "index_bookings_on_mentor_id_and_mentee_id"
   end
@@ -56,6 +57,16 @@ ActiveRecord::Schema.define(version: 2018_11_02_010334) do
     t.datetime "updated_at", null: false
     t.string "stripe_user_id"
     t.index ["user_id"], name: "index_mentors_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "mentor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentor_id"], name: "index_reviews_on_mentor_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,4 +87,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_010334) do
   add_foreign_key "bookings", "users", column: "mentee_id"
   add_foreign_key "bookings", "users", column: "mentor_id"
   add_foreign_key "mentors", "users"
+  add_foreign_key "reviews", "mentors"
+  add_foreign_key "reviews", "users"
 end

@@ -16,9 +16,9 @@
   <p><%= notice %></p>
   <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
   <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar, class: "card-img-top", alt: "" %>
+    <%= image_tag @user.avatar, class: "card-img-top img-fluid", alt: "" %>
   <% else %>
-    <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+    <%= image_tag("default-user-profile.jpg", class: "card-img-top img-fluid", alt: "") %>
   <% end %>
 
   <!-- This page should have the users information, edit and destroy button for their user profile and their mentor profile if they have one, list of bookings they are involved with and edit info for those bookings depending on their permissions -->
@@ -64,6 +64,16 @@
     <!-- Edit and destroy buttons for bookings? -->
       <p><%= booking.mentor_id%></p>
     <% end %>
+  <% end %>
+
+  <h3>Reviews given</h3>
+
+  <% if @user.reviews.length > 0 %>
+    <% @user.reviews.each do |review| %>
+      <p><%= review.created_at.strftime("%d/%m/%Y") %> <%= review.content %> to <%= review.mentor.user.username %></p>
+    <% end %>
+    <% else %>
+    <p>You haven't given a review, please give a review</p>
   <% end %>
 
 </div>

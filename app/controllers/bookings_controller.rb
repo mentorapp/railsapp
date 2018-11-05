@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
@@ -25,7 +25,6 @@ class BookingsController < ApplicationController
   # POST /products.json
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
@@ -70,7 +69,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      result = params.require(:booking).permit(:mentor_id, :mentee_id, :price, :charge_id)
+      result = params.require(:booking).permit(:mentor_id, :mentee_id, :price, :charge_id, :start_time)
       result[:price] = result[:price].to_f * 100.0
       result
     end
