@@ -41,7 +41,7 @@
     <h6>Availability:</h6><p><%= @my_mentor_profile.availability %></p>
     <h6>Price:</h6><p><%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
     <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
-  <!-- destroy mentor profile button -->
+  <!-- destroy mentor profile button? -->
   <hr>
     
     <!-- Stripe Connect SignUp Link - if a mentor wishes to charge they need to sign up for a Standard Stripe Account.
@@ -52,26 +52,32 @@
       <p>You have connected your Stripe Account and can receive payments.</p>
       <p>Stripe User Id: <%= @my_mentor_profile.stripe_user_id %></p>
     <% end %>
-
+    <hr>
     <h3>Mentor Sessions</h3>
-    <h6>You are booked to mentor the following sessions: </h6>
-    <% @mentor_bookings.each do |booking| %>
-  <!-- Edit and destroy buttons for bookings? -->
-      <p><%= booking.mentee_id%></p>
+
+    <% if @mentor_bookings.length == 0 %>
+      <h6>You are not booked to mentor any sessions</h6>
+    <% else %>
+      <h6>You are booked to mentor the following sessions: </h6>
+    <!-- Edit and destroy buttons for bookings? -->
       <% @mentor_bookings.each_with_index do |booking, index| %>
       <p>You have a booking with: <%= @mentees[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
+      <% end %>
     <% end %>
-    <% end %>
+    <hr>
   <% end %>
+  
+  <h3>Mentee Sessions</h3>
 
-  <% if @mentee_bookings.length > 0 %>
-    <h3>Mentee Sessions</h3>
+  <% if @mentee_bookings.length == 0 %>
+    <h6>You have not booked any sessions with mentors.</h6>
+  <% else %>
     <p>You are booked to be mentored in the following sessions: </p>
     <% @mentee_bookings.each_with_index do |booking, index| %>
       <p>You have a booking with: <%= @mentors[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
     <% end %>
   <% end %>
-
+  <hr>
   <h3>Reviews given</h3>
 
   <% if @user.reviews.length > 0 %>

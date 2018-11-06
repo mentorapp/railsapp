@@ -115,16 +115,16 @@ Info for Mentors Signing up:
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
-Corey
+MyMentor is addressing the need for flexible mentorship within the technology industry in Melbourne. Our challenge is to provide a service which connects individuals who are seeking mentorship with skilled professionals. To address this need, our solution must provide users with a platform which effectively facilitates this process.
 
 ## 2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
 
 MyMentor is a platform that bridges mentors and mentees in the technology industry together. MyMentor is the solution to the lack of mentorship services outside trading hours. There are many mentees seeking mentors to develop their hard skills, soft skills and cultural understanding, whereas mentors can improve their soft skills and a means to give back to the community.
 <!-- MyMentor may expand to other industries -->
 
-## 3. Describe the project will you be conducting and how. your App will address the needs.
+## 3. Describe the project will you be conducting and how your App will address the needs.
 
-MyMentor will connect a mentor and mentee through bookings. Users will be able to signup and explore the plethora of mentors and book a mentor that is suitable. Mentors have the freedom to charge their mentees depending on their purpose. Mentees have the option to mentor, and mentors can forfeit their positions. 
+MyMentor will connect a mentor and mentee through bookings. Users will be able to signup and explore the plethora of mentors and book a mentor that is suitable. Mentors have the freedom to charge their mentees depending on their purpose. Mentees have the option to mentor, and mentors can forfeit their positions.
 
 ## 4. Describe the network infrastructure the App may be based on.
 
@@ -132,7 +132,31 @@ Heroku is a service that delivers apps for developers that focuses on handling t
 
 ## 5. Identify and describe the software to be used in your App.
 
-Vanessa
+We have used a Ruby on Rails tech stack and included several libraries and gems. The basic stack is:
+
+Ruby on Rails
+Ruby
+SCSS and CSS
+HTML
+
+We also used the Bootstrap library, including a small amount of Jquery for the hamburger menu the app has in small viewing windows.
+
+*Ruby Gems we added (in order listed in Gemfile)*
+dotenv-rails: allows environment variables to be stored in a .env file so that the Rails server can load them when it boots up and they are available for the code during runtime.
+
+aws-sdk-s3: provides interface with the AWS bucket that user profile images are kept in.
+
+bootstrap: provides access to the Bootstrap library by importing it and making it available to style the app.
+
+jquery-rails: the bootstrap gem is dependent on this jquery-rails gem, so both need to be in the Gemfile.
+
+stripe: library for integrating with the Stripe platform
+
+httparty: library for making http requests which we use to make an http request to the Stripe API
+
+json: the httparty gem depends on the json gem to parse json, so it is included
+
+devise: this gem provides user authentication, i.e. allows users to sign in, and provides a library for resetting passwords via email links and so on, as per standard user requirements in an app. We have done several customisation around the devise standard user sign-up, including customising the params required for signup and adjusting the back end as well as styling the form on the front end using a customised Bootstrap theme.
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
 
@@ -150,7 +174,20 @@ A active storage table was also implemented to allow the attachment of avatars a
 
 ## 8. Describe the architecture of your App.
 
-Vanessa
+Our app follows the classic Model-View-Controller architecture of Rails Apps. 
+
+*Models*
+
+We have the following Models: booking, mentor, review, search and user.
+
+*Views*
+
+We have limited the views in our app as much as possible, both to make development easier by having few pages to style and to make using the app a better experience for users by allowing them to see associated information on the same page, rather than having to click through to see bookings with a particular mentor. This means that our views largely centre around the user and mentor models.
+
+*Controllers*
+
+
+
 
 ## 9. Explain the different high-level components (abstractions) in your App.
 
@@ -166,7 +203,15 @@ Furthermore, because our project is based on Rails, we used active records to ma
 
 ## 10. Detail any third party services that your App will use.
 
-Vanessa
+MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog series: 
+
+[Integrating Stripe with Rails - link to part 1/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf)
+
+[Integrating Stripe with Rails - link to part 2/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-2-3-c3fbe7360750)
+
+[Integrating Stripe with Rails - link to part 3/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-3-3-51f2cacb163d)
+
+MyMentor also makes use of the transactional email API service MailGun, which allows emails to be automatically sent by the app. We are sending transactional emails for both paid and free sessions, containing the booking information and emails of the mentor and mentee, allowing them to determine the details of the booking. MailGun provides a sandbox domain which you can use to test the mailing feature, but this only works to send to authorised email addresses. In order to get MailGun working in production for any email a user wishes to sign up with, we registerd a domain owned by a team member with MailGun and configured the DNS settings to allow mail to be sent to any user email in the database.
 
 ## 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
@@ -186,6 +231,8 @@ The Mentor table is associated with the User table with user_id reference as it 
 Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
 ![Database Schema - Initial](readme-assets/MentorMe_Database.png)
 
+*Database Schema - Final*
+
 ## 15. Provide User stories for your App.
 
 **User Stories:**
@@ -193,14 +240,15 @@ Green tables are our MVP, red tables are the beginnings of a plan for some addit
 *MVP*
 
 As a user I should be able to:
-• Log-in
-• Create a profile with a profile image, username, description, purpose for using the app
-• View other user's profiles, message other users
-• Have the option to pay for a booking/receive payment
+- Log-in
+- Create a profile with a profile image, username, description, purpose for using the app
+- View other user's profiles
+- Have the option to pay for a booking/receive payment
 
 *Extras*
 
-• Book a time with a mentor/provide my availability as a mentor
+- Book a time with a mentor/provide my availability as a mentor
+- Message other users about bookings
 
 ## 16. Provide Wireframes for your App.
 
@@ -218,9 +266,6 @@ Agile was implemented in our projects in the form of scrum and kanban. We commun
 
 At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](#15.-provide-user-stories-for-your-app)
 
-## 15. Provide User stories for your App.
-
-
 Kanban was essential to visualize our workflow. We used [Trello](#trello) in our project, and have divided the the workflow into "To do", "Doing", "Design", "Build", "Deploy" and "Done". 
 
 ## 19. Provide an overview and description of your Source control process.
@@ -231,7 +276,63 @@ Our git workflow can be viewed [here](#git-workflow).
 
 ## 20. Provide an overview and description of your Testing process.
 
-Vanessa
+**Testing in Development**
+
+
+
+**Testing in Production**
+
+We deployed at least once every day, and this provided us with the opportunity to test new features in production as they were going up and resolve the inevitable bugs. On the first few days we deployed late in the afternoon, but we soon learned that this didn't give us enough time to work through the deployment issues before finishing for the day. From mid way through the process we deployed either in the morning or early afternoon and did manual testing on the app.
+
+**Testers from outside the team**
+*Beta Testing*
+
+We asked several people to give the app a try throughout the build process, and their experiences are detailed here.
+
+*1st Tester - Anhar - Friday Week 1*
+
+![Discussion from Slack](readme-assets/anhar-beta-test.png)
+
+Anhar very kindly ran through the signup process on Friday and found a bug - if you added a photo the AWS bucket wasn't working. This was because it didn't have a proper card to charge things to (even though the service we are using is free AWS wants to know they could charge you if you ended up using one of the non-free ones). Once this was fixed users were able to upload photos again.
+
+Feedback from other beta testers:
+*Industry Expert*
+- Logout button is normally on right hand side
+
+*Beginner experimenting with the tech industry*
+- Tested the Heroku app (so production version)
+- Default kitten picture is great
+- Interface is intuitive - she was able to click around and find mentors and a booking interface and make a booking
+- Liked that you could see on your info page any reviews you had given
+- Felt that there could be more info on the splash page - at the moment it isn't clear what sort of mentoring the app is for - tech? Any? Other?
+- Started typing on the login screen before realising it wasn't the signup screen
+- Email worked for her email - see screenshot
+
+![Email to second tester](readme-assets/mailgun-email-example.png)
+
+*Educated average user*
+- Tested the Heroku app
+- Homepage needs info
+- Mentors page still has lorem ipsum
+- Search didn't work at all in Heroku
+- My Info page didn't load in Heroku (didn't check it before we booked a session - it may have something to do with the bookings)
+- All links on Contact page worked
+- Was expecting to receive an email about having created an account
+- Picking a time was difficult to do with that interface
+- Confirmation email had no information about the date and time selected
+- Started typing in the login screen before realising they needed to signup NB: this was an issue for two testers, perhaps move sign up button to top of page, or have  separate signup link, or have signup as the default on this page when the app is new
+
+*Industry rails coder*
+- Tested on localhost
+- Also found the lack of information available without logging in a bit odd
+- Found two errors in the search function - if there are no mentors matching that name it errors out, and the advanced search errors out
+- Not enough information about what the app is
+
+*Industry senior dev*
+- Tested on localhost
+- Same issue with lack on information in the app
+- Contact page - main heading needs to be more distinct as it isn't clear that it is the point of the page
+- Mentor cards alignment gets thrown out by a longer description
 
 ## 21. Discuss and analyse requirements related to information system security.
 
@@ -243,7 +344,11 @@ We have also discussed the importance of an identification process. It is undesi
 
 ## 22. Discuss methods you will use to protect information and data.
 
-Corey
+- Utilise Stripe as our payment management system for bookings to ensure that our user's payment data is encrypted and secured. 
+- Require account authentication in order for users to be granted access to view Mentor's profiles.
+- Only collect the minimum data required from users to create an account and use our service.
+- Provide users with full ability to edit and delete their data stored within the app (with the exception of past bookings which are stored in-case of legal implications)
+- Never release any user data to external third parties
 
 ## 23. Research what your legal obligations are in relation to handling user data.
 
@@ -329,7 +434,10 @@ We found the Trello board helpful for keeping track of where we were in the proj
 ![Day 4 Trello Board](readme-assets/day-4-trello.png)
 
 *Day 5 Trello Board*
-![Day 4 Trello Board](readme-assets/day-5-trello.png)
+![Day 5 Trello Board](readme-assets/day-5-trello.png)
+
+*Day 6 Trello Board*
+![Day 6 Trello Board](readme-assets/day-6-trello.png)
 
 ## Slack
 
@@ -346,4 +454,13 @@ We found the Trello board helpful for keeping track of where we were in the proj
 ![Day 4 Slack Channel](readme-assets/day-4-slack.png)
 
 *Day 5 Slack Channel*
+
 ![Day 4 Slack Channel](readme-assets/day-5-slack.png)
+
+![Day 5 Slack Channel](readme-assets/day-5-slack.png)
+
+*Day 6 Slack Channel*
+![Day 6 Slack Channel](readme-assets/day-6-slack.png)
+
+*Day 7 Slack Channel*
+![Day 7 Slack Channel](readme-assets/day-7-slack.png)
