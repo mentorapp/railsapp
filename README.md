@@ -164,7 +164,13 @@ We chose PostgreSQL as our database because it provides a rich variety of data t
 
 ## 7. Identify and describe the production database setup (i.e. postgres instance).
 
-Simon
+Our database consists of six tables. A User table that stores the user's 'username', 'purpose' and 'about_me' on top of active records' conventional parameters. Additional information is stored in a Mentor table which includes 'skills', 'availability' and 'price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. They also contain a stripe_user_id for charge purposes. A mentor is referenced to the User table.
+
+The Review table contains "content", a reference to a user_id and a reference to a mentor_id. 'content' is the review body and user_id is referring to the mentee and the mentor_id is referring to the mentor. Reviews are made by the mentee and only to mentors they had a booking with. Reviews belong to the User and Mentor table and User and Mentor has many reviews.
+
+The Booking table is a self-joining table that has 'price', 'charge_id', 'start_time' and two references to the User table, one for the mentee_id and another for the mentor_id. This table will store a history of booked sessions, which mentee booked with which mentor, how much the mentor was charging and what time. 
+
+A active storage table was also implemented to allow the attachment of avatars and a search table for a simple search feature.
 
 ## 8. Describe the architecture of your App.
 
@@ -185,7 +191,15 @@ We have limited the views in our app as much as possible, both to make developme
 
 ## 9. Explain the different high-level components (abstractions) in your App.
 
-Simon
+We have implemented various ruby gems in our project. On top of the standard gems acquired from rails, we implemented:
+* 'dotenv-rails' to permit the use of environmental variables
+* 'aws-sdk-s3' so we can use Amazon's S3 services
+* 'bootstrap' for our front-end styling
+* 'stripe' for our transactions
+* 'devise' for authentication
+* 'pundit' for authorization
+
+Furthermore, because our project is based on Rails, we used active records to manipulate our data and logic. CRUD was implemented with methods .create, .all, .update and .destory respectively. Validations and active storage was also made possible with the use of active records. 
 
 ## 10. Detail any third party services that your App will use.
 
@@ -209,7 +223,7 @@ The Mentor table has a foreign key of user_id that references the User table. Th
 
 ## 13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.
 
-The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user. The Booking table is a self-joining table that holds two user_ids from the User table, one from the mentee and the other from the mentor (both are users). 
+The Mentor table is associated with the User table with user_id reference as it serves to hold additional information about the user, the mentor belongs_to a user. The Booking table is a self-joining table that holds two user_ids from the User table, one from the mentee and the other from the mentor (both are users) therefore belongs_to a user. Reviews belongs_to user and mentor and both user and mentor has_many reviews, which is displayed in the mentor page and user page respectively. 
 
 ## 14. Provide your database schema design.
 
@@ -322,7 +336,11 @@ Feedback from other beta testers:
 
 ## 21. Discuss and analyse requirements related to information system security.
 
-Simon
+In our project, one method of information security was authentication and authorization. The user and only the user has the permission to edit their details. To ensure passwords are never compromised, active records encripts and salts the passwords before storing. Optimally, we should have the users change their passwords periodically to maximize their security.
+
+Strong password requirements should also be used to validate users' passwords. A password with a combination of letters, numbers and special characters im no specific order is ideal. 
+
+We have also discussed the importance of an identification process. It is undesirable if mentors are not qualified with their supposed skills, so a form of qualification is ideal.
 
 ## 22. Discuss methods you will use to protect information and data.
 
@@ -334,7 +352,11 @@ Simon
 
 ## 23. Research what your legal obligations are in relation to handling user data.
 
-Simon
+Some of the legal obligations that must be followed in regards to handling user data include: 
+
+* a Privacy Policy that explains what data is being stored, how we are planning to use them and whether they will be shared with third parties
+* transparency to how data is handled when a user wishes to delete their information
+* an explanation on how and when a user is notified about the changes to the policy
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
@@ -432,6 +454,9 @@ We found the Trello board helpful for keeping track of where we were in the proj
 ![Day 4 Slack Channel](readme-assets/day-4-slack.png)
 
 *Day 5 Slack Channel*
+
+![Day 4 Slack Channel](readme-assets/day-5-slack.png)
+
 ![Day 5 Slack Channel](readme-assets/day-5-slack.png)
 
 *Day 6 Slack Channel*
@@ -440,7 +465,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 7 Slack Channel*
 ![Day 7 Slack Channel](readme-assets/day-7-slack.png)
 
-<!-- Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. -->
 
 # Authentication Testing
 
@@ -457,3 +481,4 @@ Mentors edit page: you can currently access any mentor edit page by using mentor
 Update: there is now a check that the logged in user is the one who is the mentor that they are trying to edit. If they are not, they get redirected to their own user profile with a notice saying they are not allowed to edit this profile.
 
 If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
+
