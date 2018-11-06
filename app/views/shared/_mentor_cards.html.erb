@@ -1,0 +1,35 @@
+<!-- Page Content -->
+
+<div class="container">
+
+  <!-- Page Features -->
+  <div class="row text-center">
+  <% if @mentors.nil? || @mentors.length == 0 %>
+    <p>No mentors to show</p>
+  <% else %>
+    <% @mentors.each do |mentor| %>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <!-- This checks if the user has an image attached to their profile using Active Storage. If they do have an image attached, it will display that image. If not, it will display the default image kept in ass/assets/images. -->
+          <% if mentor.user.avatar.attached? %>
+            <%= image_tag mentor.user.avatar, class: "card-img-top", alt: "" %>
+          <% else %>
+            <%= image_tag("default-user-profile.jpg", class: "card-img-top", alt: "") %>
+          <% end %>
+          <div class="card-body">
+            <h4 class="card-title"><%= mentor.user.username %></h4>
+            <p class="card-text"><%= mentor.user.about_me %></p>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Show', mentor_path(mentor), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
