@@ -21,12 +21,18 @@ class MentorsController < ApplicationController
   end
 
   def edit
+    unless current_user.id == Mentor.find(params[:id]).user_id
+      redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
+    end
   end
 
   def create
   end
 
   def update
+    unless current_user.id == Mentor.find(params[:id]).user_id
+      redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
+    end
     if @mentor.update(mentor_params)
       redirect_to users_show_path
     else
@@ -35,7 +41,14 @@ class MentorsController < ApplicationController
   end
 
   def destroy
-    @mentor.destroy
+    unless current_user.id == Mentor.find(params[:id]).user_id
+      redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
+    end
+    if @mentor.destroy
+      redirect_to users_show_path, notice: 'Mentor profile successfully deleted'
+    else
+      redirect_to users_show_path, notice: 'Mentor profile could not be deleted at this time. Please contact app owners.'
+    end
   end
 
   private

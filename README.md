@@ -464,3 +464,21 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 7 Slack Channel*
 ![Day 7 Slack Channel](readme-assets/day-7-slack.png)
+
+
+# Authentication Testing
+
+Question: do we need pundit?
+Answer: doesn't look like we do at the moment, as there are so few pages that need authorisation.
+
+User/:id page - no matter what id you put into the address bar, it still just shows you yours because it gets the info by current_user.id.
+
+User/edit - requires the current password of the user who is trying to be changed in order to save any changes.
+
+Stripe connect: someone would need our secret API key to get a stripe_user_id and connect it to our payment account, so this is pretty well-authorised.
+
+Mentors edit page: you can currently access any mentor edit page by using mentor/:id/edit - need to include some user checks on this one. 
+Update: there is now a check that the logged in user is the one who is the mentor that they are trying to edit. If they are not, they get redirected to their own user profile with a notice saying they are not allowed to edit this profile.
+
+If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
+
