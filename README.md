@@ -299,10 +299,14 @@ Feedback from other beta testers:
 - Started typing in the login screen before realising they needed to signup NB: this was an issue for two testers, perhaps move sign up button to top of page, or have  separate signup link, or have signup as the default on this page when the app is new
 
 *Industry rails coder*
+- Tested on localhost
+- Also found the lack of information available without logging in a bit odd
 - Found two errors in the search function - if there are no mentors matching that name it errors out, and the advanced search errors out
 - Not enough information about what the app is
 
 *Industry senior dev*
+- Tested on localhost
+- Same issue with lack on information in the app
 - Contact page - main heading needs to be more distinct as it isn't clear that it is the point of the page
 - Mentor cards alignment gets thrown out by a longer description
 
