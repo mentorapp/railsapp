@@ -5,10 +5,7 @@ class Search < ApplicationRecord
 
 private
     def find_mentors
-        mentors = Mentor.where("skills like ?", "%#{keywords}%")  if keywords.present?
-        mentors = Mentor.where("price >= ?", min_price) if min_price.present?
-        mentors = Mentor.where("price <= ?", max_price) if max_price.present?
-
+        mentors = Mentor.where("skills like ? AND price BETWEEN ? AND ?", "%#{keywords}%", min_price*100, max_price*100)
         mentors
     end
 end

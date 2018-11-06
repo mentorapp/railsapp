@@ -115,16 +115,16 @@ Info for Mentors Signing up:
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
-MyMentor is addressing the need for flexible mentorship within the technology industry in Melbourne. Our challenge is to provide a service which connects individuals who are seeking mentorship with skilled professionals. To address this need, our solution must provide users with a platform which effectively ficilitates this process.
+MyMentor is addressing the need for flexible mentorship within the technology industry in Melbourne. Our challenge is to provide a service which connects individuals who are seeking mentorship with skilled professionals. To address this need, our solution must provide users with a platform which effectively facilitates this process.
 
 ## 2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
 
 MyMentor is a platform that bridges mentors and mentees in the technology industry together. MyMentor is the solution to the lack of mentorship services outside trading hours. There are many mentees seeking mentors to develop their hard skills, soft skills and cultural understanding, whereas mentors can improve their soft skills and a means to give back to the community.
 <!-- MyMentor may expand to other industries -->
 
-## 3. Describe the project will you be conducting and how. your App will address the needs.
+## 3. Describe the project will you be conducting and how your App will address the needs.
 
-MyMentor will connect a mentor and mentee through bookings. Users will be able to signup and explore the plethora of mentors and book a mentor that is suitable. Mentors have the freedom to charge their mentees depending on their purpose. Mentees have the option to mentor, and mentors can forfeit their positions. 
+MyMentor will connect a mentor and mentee through bookings. Users will be able to signup and explore the plethora of mentors and book a mentor that is suitable. Mentors have the freedom to charge their mentees depending on their purpose. Mentees have the option to mentor, and mentors can forfeit their positions.
 
 ## 4. Describe the network infrastructure the App may be based on.
 
@@ -139,7 +139,7 @@ Ruby
 SCSS and CSS
 HTML
 
-We also used the Bootstrap library, including a small amount of Jquery for the hamburger menu the app has in small viewing windows. 
+We also used the Bootstrap library, including a small amount of Jquery for the hamburger menu the app has in small viewing windows.
 
 *Ruby Gems we added (in order listed in Gemfile)*
 dotenv-rails: allows environment variables to be stored in a .env file so that the Rails server can load them when it boots up and they are available for the code during runtime.
@@ -189,9 +189,15 @@ Simon
 
 ## 10. Detail any third party services that your App will use.
 
-MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time if they wish to. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog post: [Integrating Stripe with Rails - link to part 1/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf).
+MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog series: 
 
-MyMentor also makes use of the transactional email API service MailGun, which allows emails to be automatically sent by the app. We are sending transactional emails for both paid and free sessions, containing the booking information and emails of the mentor and mentee, allowing them to determine the details of the booking. MailGun provides a sandbox domain which you can use to test the mailing feature, but this only works to send to authorised email addresses, even if you give them your credit card details. In order to get MailGun working in production for any email a user wishes to sign up with, we registerd a domain owned by a team member with MailGun and configured the DNS settings to allow mail to be sent to any user email passed to MailGun.
+[Integrating Stripe with Rails - link to part 1/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf)
+
+[Integrating Stripe with Rails - link to part 2/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-2-3-c3fbe7360750)
+
+[Integrating Stripe with Rails - link to part 3/3](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-3-3-51f2cacb163d)
+
+MyMentor also makes use of the transactional email API service MailGun, which allows emails to be automatically sent by the app. We are sending transactional emails for both paid and free sessions, containing the booking information and emails of the mentor and mentee, allowing them to determine the details of the booking. MailGun provides a sandbox domain which you can use to test the mailing feature, but this only works to send to authorised email addresses. In order to get MailGun working in production for any email a user wishes to sign up with, we registerd a domain owned by a team member with MailGun and configured the DNS settings to allow mail to be sent to any user email in the database.
 
 ## 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
@@ -211,6 +217,8 @@ The Mentor table is associated with the User table with user_id reference as it 
 Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
 ![Database Schema - Initial](readme-assets/MentorMe_Database.png)
 
+*Database Schema - Final*
+
 ## 15. Provide User stories for your App.
 
 **User Stories:**
@@ -218,14 +226,15 @@ Green tables are our MVP, red tables are the beginnings of a plan for some addit
 *MVP*
 
 As a user I should be able to:
-• Log-in
-• Create a profile with a profile image, username, description, purpose for using the app
-• View other user's profiles, message other users
-• Have the option to pay for a booking/receive payment
+- Log-in
+- Create a profile with a profile image, username, description, purpose for using the app
+- View other user's profiles
+- Have the option to pay for a booking/receive payment
 
 *Extras*
 
-• Book a time with a mentor/provide my availability as a mentor
+- Book a time with a mentor/provide my availability as a mentor
+- Message other users about bookings
 
 ## 16. Provide Wireframes for your App.
 
@@ -261,6 +270,7 @@ Our git workflow can be viewed [here](#git-workflow).
 
 We deployed at least once every day, and this provided us with the opportunity to test new features in production as they were going up and resolve the inevitable bugs. On the first few days we deployed late in the afternoon, but we soon learned that this didn't give us enough time to work through the deployment issues before finishing for the day. From mid way through the process we deployed either in the morning or early afternoon and did manual testing on the app.
 
+**Testers from outside the team**
 *Beta Testing*
 
 We asked several people to give the app a try throughout the build process, and their experiences are detailed here.

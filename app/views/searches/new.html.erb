@@ -7,8 +7,8 @@
     </div>
     <div class="field">
         <%= f.label :min_price, "Price Range" %><br>
-        <%= f.text_field :min_price, size: 10 %>
-        <%= f.text_field :max_price, size: 10 %>
+        <%= f.number_field :min_price, size: 10 %>
+        <%= f.number_field :max_price, size: 10 %>
     </div>
     <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
