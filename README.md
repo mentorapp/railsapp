@@ -115,7 +115,7 @@ Info for Mentors Signing up:
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
-Corey
+MyMentor is addressing the need for flexible mentorship within the technology industry in Melbourne. Our challenge is to provide a service which connects individuals who are seeking mentorship with skilled professionals. To address this need, our solution must provide users with a platform which effectively ficilitates this process.
 
 ## 2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
 
@@ -304,7 +304,11 @@ Simon
 
 ## 22. Discuss methods you will use to protect information and data.
 
-Corey
+- Utilise Stripe as our payment management system for bookings to ensure that our user's payment data is encrypted and secured. 
+- Require account authentication in order for users to be granted access to view Mentor's profiles.
+- Only collect the minimum data required from users to create an account and use our service.
+- Provide users with full ability to edit and delete their data stored within the app (with the exception of past bookings which are stored in-case of legal implications)
+- Never release any user data to external third parties
 
 ## 23. Research what your legal obligations are in relation to handling user data.
 
