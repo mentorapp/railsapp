@@ -265,7 +265,7 @@ We deployed at least once every day, and this provided us with the opportunity t
 
 We asked several people to give the app a try throughout the build process, and their experiences are detailed here.
 
-1st Tester - Anhar - Friday Week 1
+*1st Tester - Anhar - Friday Week 1*
 
 ![Discussion from Slack](readme-assets/anhar-beta-test.png)
 
@@ -297,6 +297,14 @@ Feedback from other beta testers:
 - Picking a time was difficult to do with that interface
 - Confirmation email had no information about the date and time selected
 - Started typing in the login screen before realising they needed to signup NB: this was an issue for two testers, perhaps move sign up button to top of page, or have  separate signup link, or have signup as the default on this page when the app is new
+
+*Industry rails coder*
+- Found two errors in the search function - if there are no mentors matching that name it errors out, and the advanced search errors out
+- Not enough information about what the app is
+
+*Industry senior dev*
+- Contact page - main heading needs to be more distinct as it isn't clear that it is the point of the page
+- Mentor cards alignment gets thrown out by a longer description
 
 ## 21. Discuss and analyse requirements related to information system security.
 
@@ -414,5 +422,8 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 6 Slack Channel*
 ![Day 6 Slack Channel](readme-assets/day-6-slack.png)
+
+*Day 7 Slack Channel*
+![Day 7 Slack Channel](readme-assets/day-7-slack.png)
 
 <!-- Our database consists of 4 tables. A User table that stores the user's 'Username', 'Purpose' and 'About me' on top of rails' conventional parameters. Additional information is stored in a Mentor table which includes 'Skills', 'Availability' and 'Price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. -->
