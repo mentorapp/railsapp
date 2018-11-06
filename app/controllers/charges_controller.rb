@@ -24,7 +24,7 @@ class ChargesController < ApplicationController
       }
     )
 
-    puts charge.inspect
+    # puts charge.inspect
     
     # If the charge is successful, create a booking in the system and send out the emails. If its not, the rescue will come into effect.
     
