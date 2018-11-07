@@ -1,12 +1,14 @@
-<h2>
-    Thanks, you paid 
-    <strong>
-        <%= number_to_currency(@mentor.price/100.0) %>    
-    </strong>
+<div class="container">
+  <h2>
+      Thanks, you paid 
+      <strong>
+          <%= number_to_currency(@mentor.price/100.0) %>    
+      </strong>
 
-    <p>
-        You purchased a session with <%= @mentor.user.username %> 
-    </p>
+      <p>
+          You purchased a session with <%= @mentor.user.username %> 
+      </p>
 
-    <%= link_to 'Home', root_path %>
-</h2>
+      <%= link_to 'Home', root_path %>
+  </h2>
+</div>

@@ -21,12 +21,6 @@ Rails App by Simon, Corey and Vanessa.
 
 **Workflow Info for Us**
 
-Team Questions Thurs Nov 1st
-
-Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (I know email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
-
-Decision: do emails first and then shoot for a booking system
-
 ## Git Workflow
 
 We set the project up as a GitHub organisation, aiming to make the organisation repo the source of truth. When working on our own machines, we will start by doing the following:
@@ -84,6 +78,12 @@ Problems this app will solve:
 
 *NB: Also created user stories during this session, but have moved these down into question 15 of the SAQs*
 
+**Team Meeting Thurs Nov 1st**
+
+Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (Email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
+
+Decision: do emails first and then shoot for a booking system.
+
 **User flow**
 
 • Wireframes
@@ -98,9 +98,13 @@ Problems this app will solve:
 
 • Code of conduct violations
 
+**Stripe Payment Discussion Friday Nov 2nd**
+
 *Charging People with Stripe and Getting People Paid*
-Charging people and paying others: Stripe used to have a way to do this with someone's band card but even then we would be storing people's bank cards. It looks like Stripe Connect sorts all this out for you - user verification, selling, etc.
-In terms of people being happy to mentor for no charge, it may be that their button is just one to make a booking and doesn't talk to Stripe, so Stripe connect is only involved if people wish to charge for their services. That way people only have to sign up for a Stripe seller account if they want to make money using the service. Looks like the standard service is the one that would work best for us - doesn't cost anything extra and integration is apparently pretty easy. Given that our user base is tech people, they should be tech savvy enough to create a Stripe account if they want to charge for their services on the platform. 
+
+Charging people and paying others: Stripe used to have a way to do this with someone's bank card but even then we would be storing people's bank cards. It looks like Stripe Connect sorts all this out for you - user verification, selling, etc.
+
+In terms of people being happy to mentor for no charge, it may be that their button is just one to make a booking and doesn't talk to Stripe, so Stripe connect is only involved if people wish to charge for their services. That way people only have to sign up for a Stripe seller account if they want to make money using the service. Looks like the standard service is the one that would work best for us - doesn't cost anything extra and integration is apparently pretty easy. Given that our user base is tech people, they should be tech savvy enough to create a Stripe account if they want to charge for their services on the platform.
 
 Chatted as a team and decided to implement Stripe Connect for any payments over 50c (and mentors will need to have a Stripe Account to be paid). If they choose not to be paid, the button to book them will be a standard rails button, not a Stripe button. (The is also good as you won't have to enter card details and be charged 50c if they mentor doesn't want to be paid.)
 
@@ -152,7 +156,7 @@ We also used the Bootstrap library, including a small amount of Jquery for the h
 
 - bootstrap: provides access to the Bootstrap library by importing it and making it available to style the app.
 
-- jquery-rails: the bootstrap gem is dependent on this jquery-rails gem, so both need to be in the Gemfile.
+- jquery-rails: the bootstrap gem is dependent on this jquery-rails gem, so both need to be available in the app.
 
 - stripe: library for integrating with the Stripe platform
 
@@ -179,7 +183,7 @@ A active storage table was also implemented to allow the attachment of avatars a
 
 ## 8. Describe the architecture of your App.
 
-Our app follows the classic Model-View-Controller architecture of Rails Apps. 
+Our app follows the classic Model-View-Controller architecture of Rails Apps. The Models represent the business logic of our system, the Views display the information to the user, and the Controllers interface between the Models, Views and database.
 
 *Models*
 
@@ -187,12 +191,31 @@ We have the following Models: booking, mentor, review, search and user.
 
 *Views*
 
-We have limited the views in our app as much as possible, both to make development easier by having few pages to style and to make using the app a better experience for users by allowing them to see associated information on the same page, rather than having to click through to see bookings with a particular mentor. This means that our views largely centre around the user and mentor models.
+We have the following folders of views:
+
+- booking_mailer: contains the templates for mailing users about their booking transactions
+- bookings: these views are for creating and editing bookings
+- charges: contains only one view, the landing page for Stripe charges with confirmation information for the user.
+- devise: this folder has many views for the collection and handling of user registration data. 
+- layouts: this folder contains the html layouts for the entire application. All the other views are rendered with the <% yeild %> statement in the body of the HTML
+- mentors: this is a complete set of views for creating, updating and viewing mentor profiles
+- searches: these views are for the 'Advanced Search' function of our app, which only needs a 'new' view to create the search and a 'show' to display the results
+- shared: this folder contains partials for page elements that are shared across many pages in the app.
+- users: contains only the view for a user to see their own info page, as views for editing user information are handled by the devise folder
+- welcome: contains the landing page (index), contact page and terms and conditions - all the static pages in the site
 
 *Controllers*
 
+MyMentor has a number of controllers in charge of different parts of the app. They are:
 
-
+- bookings_controller: responsible for CRUD actions on bookings
+- charges_controller: creates new charges by interfacing with the Stipe API
+- mentors_controller: CRUD actions for mentors
+- registrations_controller: contains the create, update and destroy actions for the devise user registrations. This controller inherits the rest of the CRUD actions from the devise registrations controller class (in the devise library)
+- reviews_controller: empty at this stage as the reviews are an unfinished feature for this sprint
+- searches_controller: creates and shows searches based on user input on the Advanced Search page
+- users_controller: handles the stripe connection for a users mentor profile and the show action for displaying a user page
+- welcome_controller: this is the controller for the static pages in the app
 
 ## 9. Explain the different high-level components (abstractions) in your App.
 
@@ -275,7 +298,7 @@ Kanban was essential to visualize our workflow. We used [Trello](#trello) in our
 
 ## 19. Provide an overview and description of your Source control process.
 
-Our git workflow can be viewed [here](#git-workflow).
+Our git workflow can be viewed [here](#git-workflow). We have kept it at the top of the README so that we can access it easily as we work.
 
 [Github organization](https://github.com/mentorapp/railsapp)
 
@@ -283,11 +306,19 @@ Our git workflow can be viewed [here](#git-workflow).
 
 **Testing in Development**
 
+*Behaviour Testing*
 
+Throughout the development process we continually manually tested as we built, both during the coding to make sure each part behaved as expected, and once each feature was done, to check that it integrated with the rest of the app. We also tested once we had merged the working branch with master and pulled it down to our individual computers to make sure the new feature/s also behaved as expected in other development environments.
+
+Our happy-path testing was based around our user stories, usually using the user personas from our initial development meeting. We also got creative with user errors to see what would happen when the app got different data from what it was expecting.
+
+*Security Testing*
+
+Once we stopped adding features for this sprint, we did some penetration testing of the app in our local environment. Team members found several security vulnerabilities, as did a helpful tester from outside the team.
 
 **Testing in Production**
 
-We deployed at least once every day, and this provided us with the opportunity to test new features in production as they were going up and resolve the inevitable bugs. On the first few days we deployed late in the afternoon, but we soon learned that this didn't give us enough time to work through the deployment issues before finishing for the day. From mid way through the process we deployed either in the morning or early afternoon and did manual testing on the app.
+We deployed at least once every day, and this provided us with the opportunity to test new features in production as they were going up and resolve the inevitable bugs. On the first few days we deployed late in the afternoon, but we soon learned that this didn't give us enough time to work through the deployment issues before finishing for the day. From mid-way through the sprint we deployed either in the morning or early afternoon and did manual testing on the app for all new features.
 
 **Testers from outside the team**
 *Beta Testing*
