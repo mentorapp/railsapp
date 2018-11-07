@@ -3,14 +3,17 @@
     <div class="container">
         <h1 class="display-4 over-image">Meet the Mentors!</h1>
         <p class="lead over-image">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-
         <%= form_tag mentors_path, method: :get do %>
-          <p> 
-            <%= text_field_tag :search, params[:search], placeholder: "Enter mentor name" %>
-            <%= button_tag "Search", name: nil %>
-          </p>
+          <div class="row">
+            <div class="col-3"> 
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter mentor name" %>
+            </div>
+            <div class="col-4">
+            <%= button_tag "Search", name: nil, class: "btn btn-primary" %>
+            </div>
+          </div>
         <% end %>
-
+        <br>
         <p><%= link_to "Advanced Search", new_search_path %></p>
     </div>
 </header>
