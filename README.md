@@ -349,14 +349,21 @@ We have also discussed the importance of an identification process. It is undesi
 - Only collect the minimum data required from users to create an account and use our service.
 - Provide users with full ability to edit and delete their data stored within the app (with the exception of past bookings which are stored in-case of legal implications)
 - Never release any user data to external third parties
+- We have activated 2-factor-authentication for Heroku, AWS, Stripe and Mail gun
+- Heroku also supplies a variety of user data protection
+    - Incase there is an issue with the database, Heroku offers a rollback function
+    - Heroku has a backup system that consists of physical and logical backups
+    - SSL is integrated which protects sensitive data during transportation between user and server
 
 ## 23. Research what your legal obligations are in relation to handling user data.
 
 Some of the legal obligations that must be followed in regards to handling user data include: 
 
-* a Privacy Policy that explains what data is being stored, how we are planning to use them and whether they will be shared with third parties
-* transparency to how data is handled when a user wishes to delete their information
-* an explanation on how and when a user is notified about the changes to the policy
+- A Privacy Policy that explains what data is being stored, how we are planning to use them and whether they will be shared with third parties
+    - Transparency to how data is handled when a user wishes to delete their information
+    - An explanation on how and when a user is notified about the changes to the policy
+    - A form of confirmation that the user has read the Privacy Policy
+    - A drawback however, if a mentor deletes their profile, they will delete all associated information linked to their data including their payment information
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
@@ -482,3 +489,6 @@ Update: there is now a check that the logged in user is the one who is the mento
 
 If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
 
+## Further Discussions
+
+If we are to actually launch the app, we definitely need authorization from pundit on all data changes (bookings, reviews, mentors). However, our MVP currently meets expectations with some form of authorization.
