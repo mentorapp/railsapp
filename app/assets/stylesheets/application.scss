@@ -76,6 +76,15 @@
     margin-top: 3rem;
   }
 
+  .nav-item-footer {
+    color: #343a40;
+    padding-right: 10px;
+  }
+  .nav-item-footer:hover, .nav-item-footer:focus {
+    text-decoration: none;
+    color: #FB9179;
+  }
+
 // Styling for Stripe Connect Button that mentors use to connect their account to our Stripe platform.
 
 .stripe-connect {
