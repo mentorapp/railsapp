@@ -6,6 +6,7 @@
   <h1>Delete My Mentor Profile</h1>
 
   <p>Would you like to remove your mentor profile from MyMentor? You will still be able to log in and use the app as a mentee, but all your mentor details will be destroyed.</p>
+  <p>NB: If you have any mentor bookings on this profile you will be unable to delete your account. If you wish to, please contact the administrators.</p>
 
   <%= button_to "Delete my mentor profile", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
 </div>
