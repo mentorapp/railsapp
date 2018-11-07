@@ -24,12 +24,12 @@
     <%= form.label :availability %><br />
     <%= form.text_area :availability, class: "form-control", autofocus: true %>
   </div>
-
+  
   <div class="field form-group">
     <%= form.label :price %><br />
     <%= form.text_field :price, value: number_with_precision((mentor.price||0)/100.0, :precision => 2), class: "form-control", autofocus: true %>
   </div>
-
+  <p>If you choose to charge for your services, you will need to create and maintain your own Stripe account, which you will then need to connect to the MyMentor Stripe account in order to be booked for paid sessions. Any fees charged by Stripe will be payable by you. If you choose to mentor for free, no Stripe account is necessary.</p>
   <div class="actions">
     <%= form.submit 'Submit', class: "btn btn-primary" %>
   </div>
