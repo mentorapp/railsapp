@@ -196,16 +196,15 @@ We have limited the views in our app as much as possible, both to make developme
 
 ## 9. Explain the different high-level components (abstractions) in your App.
 
-We have implemented various ruby gems in our project. On top of the standard gems acquired from rails, we implemented:
-
-* 'dotenv-rails' to permit the use of environmental variables
-* 'aws-sdk-s3' so we can use Amazon's S3 services to store users' avatars
-* 'bootstrap' for our front-end styling
-* 'stripe' for our transactions
-* 'devise' for authentication
-
-Furthermore, because our project is based on Rails, we used active records to manipulate our data and logic. CRUD was implemented with methods .create, .all, .update and .destory respectively. Validations and active storage was also made possible with the use of active records. 
-
+*Models*
+- 
+    - 
+*Views*
+- 
+    - 
+*Controller*
+- 
+    - 
 ## 10. Detail any third party services that your App will use.
 
 MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog series: 
@@ -367,9 +366,9 @@ Some of the legal obligations that must be followed in regards to handling user 
 - A Privacy Policy that explains what data is being stored, how we are planning to use them and whether they will be shared with third parties
     - Transparency to how data is handled when a user wishes to delete their information
     - An explanation on how and when a user is notified about the changes to the policy
-    - A form of confirmation that the user has read the Privacy Policy
-    - A drawback however, if a mentor deletes their profile, they will delete all associated information linked to their data including their payment information
--
+    - Confirmation that the user has read the Privacy Policy
+- Ensure we backup data consistently incase data it is lost
+- Data must be disposed of securely when appropriate. Failure to do so may result in unauthorized access to users' data
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
