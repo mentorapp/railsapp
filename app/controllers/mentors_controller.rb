@@ -36,10 +36,10 @@ class MentorsController < ApplicationController
     if @mentor.update(mentor_params)
       if params[:deactivate] == '1'
         @mentor.update(active: false)
-        redirect_to users_show_path, notice: 'You have successfully deactivated your mentor account'
+        redirect_to users_show_path, notice: 'You have successfully deactivated your mentor profile'
       elsif params[:activate] == '1'
         @mentor.update(active: true)
-        redirect_to users_show_path, notice: 'You have successfully re-activated your mentor account'
+        redirect_to users_show_path, notice: 'You have successfully re-activated your mentor profile'
       else
         redirect_to users_show_path, notice: 'You have successfully updated your details'
       end
