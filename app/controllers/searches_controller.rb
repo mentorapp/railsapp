@@ -14,6 +14,13 @@ class SearchesController < ApplicationController
 
     private
     def mentor_params
-        params.require(:search).permit(:keywords, :min_price, :max_price)
+        result = params.require(:search).permit(:keywords, :min_price, :max_price)
+        if result[:min_price].length == 0
+          result[:min_price] = 0
+        end
+        if result[:max_price].length == 0
+          result[:max_price] = 8000
+        end
+        result
     end
 end
