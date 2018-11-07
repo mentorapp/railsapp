@@ -10,6 +10,7 @@ class SearchesController < ApplicationController
 
     def show
         @search = Search.find(params[:id])
+        @mentors = @search.mentors
     end
 
     private
@@ -19,7 +20,7 @@ class SearchesController < ApplicationController
           result[:min_price] = 0
         end
         if result[:max_price].length == 0
-          result[:max_price] = 8000
+          result[:max_price] = 80000
         end
         result
     end
