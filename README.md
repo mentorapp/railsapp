@@ -229,7 +229,7 @@ The Mentor table is associated with the User table with user_id reference as it 
 
 *Database Schema - Initial*
 Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
-![Database Schema - Initial](readme-assets/MentorMe_Database.png)
+![Database Schema - Initial](docs/MentorMe_Database.png)
 
 *Database Schema - Final*
 
@@ -291,7 +291,7 @@ We asked several people to give the app a try throughout the build process, and 
 
 *1st Tester - Anhar - Friday Week 1*
 
-![Discussion from Slack](readme-assets/anhar-beta-test.png)
+![Discussion from Slack](docs/anhar-beta-test.png)
 
 Anhar very kindly ran through the signup process on Friday and found a bug - if you added a photo the AWS bucket wasn't working. This was because it didn't have a proper card to charge things to (even though the service we are using is free AWS wants to know they could charge you if you ended up using one of the non-free ones). Once this was fixed users were able to upload photos again.
 
@@ -308,7 +308,7 @@ Feedback from other beta testers:
 - Started typing on the login screen before realising it wasn't the signup screen
 - Email worked for her email - see screenshot
 
-![Email to second tester](readme-assets/mailgun-email-example.png)
+![Email to second tester](docs/mailgun-email-example.png)
 
 *Educated average user*
 - Tested the Heroku app
@@ -429,48 +429,48 @@ We elected to work in person for the majority of the time, confining our require
 We found the Trello board helpful for keeping track of where we were in the project, and for keeping track of who was working on what. As people elected to work on tasks Vanessa assigned them to the Trello cards, and cards were moved across to 'Doing' and 'Done' by either the team member working on them or by Vanessa.
 
 *Day 1 Trello Board*
-![Day 1 Trello Board](readme-assets/day-1-trello.png)
+![Day 1 Trello Board](docs/day-1-trello.png)
 
 *Day 2 Trello Board*
-![Day 2 Trello Board](readme-assets/day-2-trello.png)
+![Day 2 Trello Board](docs/day-2-trello.png)
 
 *Day 3 Trello Board*
-![Day 3 Trello Board](readme-assets/day-3-trello.png)
+![Day 3 Trello Board](docs/day-3-trello.png)
 
 *Day 4 Trello Board*
-![Day 4 Trello Board](readme-assets/day-4-trello.png)
+![Day 4 Trello Board](docs/day-4-trello.png)
 
 *Day 5 Trello Board*
-![Day 5 Trello Board](readme-assets/day-5-trello.png)
+![Day 5 Trello Board](docs/day-5-trello.png)
 
 *Day 6 Trello Board*
-![Day 6 Trello Board](readme-assets/day-6-trello.png)
+![Day 6 Trello Board](docs/day-6-trello.png)
 
 ## Slack
 
 *Day 1 Slack Channel*
-![Day 1 Slack Channel](readme-assets/day-1-slack.png)
+![Day 1 Slack Channel](docs/day-1-slack.png)
 
 *Day 2 Slack Channel*
-![Day 2 Slack Channel](readme-assets/day-2-slack.png)
+![Day 2 Slack Channel](docs/day-2-slack.png)
 
 *Day 3 Slack Channel*
-![Day 3 Slack Channel](readme-assets/day-3-slack.png)
+![Day 3 Slack Channel](docs/day-3-slack.png)
 
 *Day 4 Slack Channel*
-![Day 4 Slack Channel](readme-assets/day-4-slack.png)
+![Day 4 Slack Channel](docs/day-4-slack.png)
 
 *Day 5 Slack Channel*
 
-![Day 4 Slack Channel](readme-assets/day-5-slack.png)
+![Day 4 Slack Channel](docs/day-5-slack.png)
 
-![Day 5 Slack Channel](readme-assets/day-5-slack.png)
+![Day 5 Slack Channel](docs/day-5-slack.png)
 
 *Day 6 Slack Channel*
-![Day 6 Slack Channel](readme-assets/day-6-slack.png)
+![Day 6 Slack Channel](docs/day-6-slack.png)
 
 *Day 7 Slack Channel*
-![Day 7 Slack Channel](readme-assets/day-7-slack.png)
+![Day 7 Slack Channel](docs/day-7-slack.png)
 
 
 # Authentication Testing

@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    authorize @booking
   end
 
   # POST /products
@@ -54,7 +53,6 @@ class BookingsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    authorize @booking
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
