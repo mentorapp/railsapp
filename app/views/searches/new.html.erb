@@ -1,15 +1,46 @@
-<h1>Advanced Search</h1>
+
+
+<div style="height: 100vh;">
+  
+    <!-- Page Content -->
+
+<%= image_tag("rawpixel-384899-unsplash.jpg", class: "bg", alt: "") %>
+
+<div class="container mt-5 mb-5 align-middle">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card pl-5 pr-5 pt-5 pb-5">
+
+<div class="container">
+
+<h1 class="pink">Advanced Search</h1>
+<hr>
 
 <%= form_for @search do |f| %>
     <div class="field">
-        <%= f.label :keywords %><br>
-        <%= f.text_field :keywords %>
+        <p><%= f.label :keywords %></p>
+        <%= f.text_field :keywords, class: "form-control", placeholder: "John Smith, JavaScript" %>
     </div>
+    <br>
     <div class="field">
-        <%= f.label :min_price, "Price Range" %><br>
-        <%= f.number_field :min_price, size: 10 %>
-        <%= f.number_field :max_price, size: 10 %>
+        <p><%= f.label :min_price, "Price Range" %></p>
+    <div class="row justify-content-center">
+    <div class="col-md-6"><%= f.number_field :min_price, size: 10, class: "form-control", placeholder: "$10" %></div>
+    <div class="col-md-6"><%= f.number_field :max_price, size: 10, class: "form-control", placeholder: "$100" %></div>
     </div>
-    <div class="actions"><%= f.submit "Search" %></div>
+    </div>
+    <br>
+    <div class="actions"><%= f.submit "Search", name: nil, class: "btn btn-primary" %></div>
 <% end %>
+
+</tbody>
+
+</td>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
