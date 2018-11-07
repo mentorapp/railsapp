@@ -19,39 +19,40 @@ Rails App by Simon, Corey and Vanessa.
 
 ## Working Info
 
----
-
 **Workflow Info for Us**
 
 Team Questions Thurs Nov 1st
 
 Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (I know email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
 
-Decision: do emails first and then shoot for a booking system.
+Decision: do emails first and then shoot for a booking system
 
 ## Git Workflow
 
 We set the project up as a GitHub organisation, aiming to make the organisation repo the source of truth. When working on our own machines, we will start by doing the following:
 
-- on branch master, do 'git pull'
-- create a new branch with: 'git checkout -b branch-name'
-- work on the new branch
-- commit to the new branch
-- push to the online repo with: 'git push origin branch-name'
-- checkout back to master
-- go into the GitHub repo and merge it into master 'new pull request'
-- delete the branch online if you don't need it anymore
-- do a git pull on the local machine
-- delete the local branch if you don't need it any more with 'git branch -d branch-name'
+- On branch master, do 'git pull'
+- Create a new branch with: 'git checkout -b branch-name'
+- Work on the new branch
+- Commit to the new branch
+- Push to the online repo with: 'git push origin branch-name'
+- Checkout back to master
+- Go into the GitHub repo and merge it into master 'new pull request'
+- Delete the branch online if you don't need it anymore
+- Do a git pull on the local machine
+- Delete the local branch if you don't need it any more with 'git branch -d branch-name'
 
 ## Database Seeding
 
 In order to use the seed file to populate our database we need to do the following:
 
-rails db:drop
-rails db:create
-rails db:migrate
-rails db:seed
+    rails db:drop
+
+    rails db:create
+
+    rails db:migrate
+
+    rails db:seed
 
 ## Heroku
 
@@ -66,31 +67,35 @@ App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
 Problems this app will solve:
 
 • Hard to meet developers in the industry
+
 • Hard to develop communication and management skills working in a highly technical enviroment
 
 **User Personas:**
 
-• Coder Academy student - John is a career changer and has recently finished a bootcamp course at Coder Academy. He is confused about what direction he should be taking and would like to sit down with an experienced developer to gain some career advice.
+• Coder Academy student - John is a career changer and has recently finished a bootcamp course at Coder Academy. He is confused about what direction he should be taking and would like to sit down with an experienced developer to gain some career advice
 
-• Senior Developer - Jane is a Senior Developer at a large company in Melbourne. She loves the idea of sharing her knowledge and giving back to the industry but doesn't know where to start.
+• Senior Developer - Jane is a Senior Developer at a large company in Melbourne. She loves the idea of sharing her knowledge and giving back to the industry but doesn't know where to start
 
-• Sarah is a freelance designer who works in website design. She would love to expand her network within the tech industry but is unsure of where or how to start. 
+• Sarah is a freelance designer who works in website design. She would love to expand her network within the tech industry but is unsure of where or how to start
 
-• Alex is currently learning to code online in his spare time. He is struggling with databases and would like help from a mentor to learn more about it one on one.
+• Alex is currently learning to code online in his spare time. He is struggling with databases and would like help from a mentor to learn more about it one on one
 
-• Javascript Developer - Alicia is a mid-level Javascript developer who has a few years experience working for a start-up. She currently works 3 days a week and loves the idea of supplementing her income by teaching code. She isn't a qualified teacher but has amazing skills in the area of Javascript. She would love to improve her communication and managing skills to help her move up in her own career.
+• Javascript Developer - Alicia is a mid-level Javascript developer who has a few years experience working for a start-up. She currently works 3 days a week and loves the idea of supplementing her income by teaching code. She isn't a qualified teacher but has amazing skills in the area of Javascript. She would love to improve her communication and managing skills to help her move up in her own career
 
-*NB: Also created user stories during this session, but have moved these down into question 15 of the SAQs.*
+*NB: Also created user stories during this session, but have moved these down into question 15 of the SAQs*
 
 **User flow**
 
 • Wireframes
+
 • ERD
 
 **Ethical Considerations:**
 
 • User reviews
+
 • Code of conduct
+
 • Code of conduct violations
 
 *Charging People with Stripe and Getting People Paid*
@@ -99,19 +104,17 @@ In terms of people being happy to mentor for no charge, it may be that their but
 
 Chatted as a team and decided to implement Stripe Connect for any payments over 50c (and mentors will need to have a Stripe Account to be paid). If they choose not to be paid, the button to book them will be a standard rails button, not a Stripe button. (The is also good as you won't have to enter card details and be charged 50c if they mentor doesn't want to be paid.)
 
-- added a stripe charge id to bookings table
-- added a stripe user id to mentors table for when they authorise their account (we only support standard Stripe accounts - they require us to take the least responsibility which is good because we are new developers)
+- Added a stripe charge id to bookings table
+- Added a stripe user id to mentors table for when they authorise their account (we only support standard Stripe accounts - they require us to take the least responsibility which is good because we are new developers)
 
 Info for Mentors Signing up:
-- That they’ll need to create and maintain their Stripe account.
-- That they’ll need to handle chargebacks and all customer service issues.
-- Who is responsible for paying the Stripe fees.
-- What, if any, fees the platform charges.
+- That they’ll need to create and maintain their Stripe account
+- That they’ll need to handle chargebacks and all customer service issues
+- Who is responsible for paying the Stripe fees
+- What, if any, fees the platform charges
 
 
 ## Short Answer Questions
-
----
 
 ## 1. What is the need (i.e. challenge) that you will be addressing in your project?
 
@@ -134,43 +137,45 @@ Heroku is a service that delivers apps for developers that focuses on handling t
 
 We have used a Ruby on Rails tech stack and included several libraries and gems. The basic stack is:
 
-Ruby on Rails
-Ruby
-SCSS and CSS
-HTML
+- Ruby on Rails
+- Ruby
+- SCSS and CSS
+- HTML
 
 We also used the Bootstrap library, including a small amount of Jquery for the hamburger menu the app has in small viewing windows.
 
 *Ruby Gems we added (in order listed in Gemfile)*
-dotenv-rails: allows environment variables to be stored in a .env file so that the Rails server can load them when it boots up and they are available for the code during runtime.
 
-aws-sdk-s3: provides interface with the AWS bucket that user profile images are kept in.
+- dotenv-rails: allows environment variables to be stored in a .env file so that the Rails server can load them when it boots up and they are available for the code during runtime.
 
-bootstrap: provides access to the Bootstrap library by importing it and making it available to style the app.
+- aws-sdk-s3: provides interface with the AWS bucket that user profile images are kept in.
 
-jquery-rails: the bootstrap gem is dependent on this jquery-rails gem, so both need to be in the Gemfile.
+- bootstrap: provides access to the Bootstrap library by importing it and making it available to style the app.
 
-stripe: library for integrating with the Stripe platform
+- jquery-rails: the bootstrap gem is dependent on this jquery-rails gem, so both need to be in the Gemfile.
 
-httparty: library for making http requests which we use to make an http request to the Stripe API
+- stripe: library for integrating with the Stripe platform
 
-json: the httparty gem depends on the json gem to parse json, so it is included
+- httparty: library for making http requests which we use to make an http request to the Stripe API
 
-devise: this gem provides user authentication, i.e. allows users to sign in, and provides a library for resetting passwords via email links and so on, as per standard user requirements in an app. We have done several customisation around the devise standard user sign-up, including customising the params required for signup and adjusting the back end as well as styling the form on the front end using a customised Bootstrap theme.
+- json: the httparty gem depends on the json gem to parse json, so it is included
+
+- devise: this gem provides user authentication, i.e. allows users to sign in, and provides a library for resetting passwords via email links and so on, as per standard user requirements in an app. We have done several customisation around the devise standard user sign-up, including customising the params required for signup and adjusting the back end as well as styling the form on the front end using a customised Bootstrap theme.
 
 ## 6. Identify the database to be used in your App and provide a justification for your choice.
 
-We chose PostgreSQL as our database because it provides a rich variety of data types and handles large amounts of data very efficiently, even with complex queries. It is also open-source, therefore free and supported by a strong community. However, with its extensive features, it may be an excessive database for simpler queries. Many users have reported the documentation to be lacking and needs improvement. 
+We chose PostgreSQL as our database because it provides a rich variety of data types and handles large amounts of data very efficiently, even with complex queries. It is also open-source, therefore free and supported by a strong community. However, with its extensive features, it may be an excessive database for simpler queries. Also many users have reported the documentation to be lacking and needs improvement. 
 
 ## 7. Identify and describe the production database setup (i.e. postgres instance).
 
-Our database consists of six tables. A User table that stores the user's 'username', 'purpose' and 'about_me' on top of active records' conventional parameters. Additional information is stored in a Mentor table which includes 'skills', 'availability' and 'price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective. They also contain a stripe_user_id for charge purposes. A mentor is referenced to the User table.
+Our database consists of six tables. A User table that stores the user's 'username', 'purpose' and 'about_me' on top of active records' conventional parameters. Additional information is stored in a Mentor table which includes 'skills', 'availability', 'active' and 'price' when a user decides to be a mentor. These parameters are important because they will determine whether a mentor is suitable for the user's objective and whether the mentor profile is active or not. They also contain a stripe_user_id for charge purposes. A mentor is referenced to the User table.
 
 The Review table contains "content", a reference to a user_id and a reference to a mentor_id. 'content' is the review body and user_id is referring to the mentee and the mentor_id is referring to the mentor. Reviews are made by the mentee and only to mentors they had a booking with. Reviews belong to the User and Mentor table and User and Mentor has many reviews.
+*Note: This feature is in the works* 
 
 The Booking table is a self-joining table that has 'price', 'charge_id', 'start_time' and two references to the User table, one for the mentee_id and another for the mentor_id. This table will store a history of booked sessions, which mentee booked with which mentor, how much the mentor was charging and what time. 
 
-A active storage table was also implemented to allow the attachment of avatars and a search table for a simple search feature.
+A active storage table was also implemented to allow the attachment of avatars and a search table for a simple and advance search feature.
 
 ## 8. Describe the architecture of your App.
 
@@ -192,12 +197,12 @@ We have limited the views in our app as much as possible, both to make developme
 ## 9. Explain the different high-level components (abstractions) in your App.
 
 We have implemented various ruby gems in our project. On top of the standard gems acquired from rails, we implemented:
+
 * 'dotenv-rails' to permit the use of environmental variables
-* 'aws-sdk-s3' so we can use Amazon's S3 services
+* 'aws-sdk-s3' so we can use Amazon's S3 services to store users' avatars
 * 'bootstrap' for our front-end styling
 * 'stripe' for our transactions
 * 'devise' for authentication
-* 'pundit' for authorization
 
 Furthermore, because our project is based on Rails, we used active records to manipulate our data and logic. CRUD was implemented with methods .create, .all, .update and .destory respectively. Validations and active storage was also made possible with the use of active records. 
 
@@ -262,9 +267,9 @@ Sometimes we choose to pair or mob program, especially for crucial components of
 
 ## 18. Discuss how Agile methodology is being implemented in your project.
 
-Agile was implemented in our projects in the form of scrum and kanban. We communicated daily face to face and also through [slack](#slack).
+Agile was implemented in our project in the form of scrum and kanban. We communicated daily face to face and also through [slack](#slack).
 
-At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](#15.-provide-user-stories-for-your-app)
+At the beginning, we decided to implement a scrum master who is responsible for steering the direction of our app. Vanessa was assigned scrum master because of her skills and experience. Morning stand-ups was routine, which consisted of what the team member had accomplished, what they were currently working on and their challenges. Finally, we implemented user stories to help determine the who's, what's and why's of our app which can be seen [here](#sprint-planning)
 
 Kanban was essential to visualize our workflow. We used [Trello](#trello) in our project, and have divided the the workflow into "To do", "Doing", "Design", "Build", "Deploy" and "Done". 
 
@@ -338,9 +343,9 @@ Feedback from other beta testers:
 
 In our project, one method of information security was authentication and authorization. The user and only the user has the permission to edit their details. To ensure passwords are never compromised, active records encripts and salts the passwords before storing. Optimally, we should have the users change their passwords periodically to maximize their security.
 
-Strong password requirements should also be used to validate users' passwords. A password with a combination of letters, numbers and special characters im no specific order is ideal. 
+Strong password requirements should also be used to validate users' passwords. A password with a combination of letters, numbers and special characters in no specific order is ideal. 
 
-We have also discussed the importance of an identification process. It is undesirable if mentors are not qualified with their supposed skills, so a form of qualification is ideal.
+We have also discussed the importance of an identification process. It is undesirable if mentors are not qualified with their supposed skills, so a form of qualification should be implemented.
 
 ## 22. Discuss methods you will use to protect information and data.
 
@@ -364,13 +369,12 @@ Some of the legal obligations that must be followed in regards to handling user 
     - An explanation on how and when a user is notified about the changes to the policy
     - A form of confirmation that the user has read the Privacy Policy
     - A drawback however, if a mentor deletes their profile, they will delete all associated information linked to their data including their payment information
+-
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
 
 ## Design Planning
-
----
 
 **Brand Attributes**
 
@@ -420,7 +424,6 @@ Once we were clear on our brand attributes and on wanting to use Bootstrap to ma
 
 
 ## Team Communication
----
 
 We elected to work in person for the majority of the time, confining our required hours to the standard 9-5. This meant that in addition to the morning standup we talked regularly throughout the day, ensuring our local repos were up to date and that we were making good use of branches and of our time. We also used pair and mob programming on particularly tricky parts of the project.
 
