@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
       if resource.persisted?
         if resource.active_for_authentication?
           if params[:mentor] == "1"
-            Mentor.create({user_id: resource.id, price: 0})
+            Mentor.create({user_id: resource.id, price: 0, active: true})
           end
           set_flash_message! :notice, :signed_up
           sign_up(resource_name, resource)
@@ -33,7 +33,7 @@ class RegistrationsController < Devise::RegistrationsController
     if params[:mentor] == '1'
       mentor = Mentor.find_by(user_id: current_user.id)
       if mentor.nil? == true
-        Mentor.create({user_id: current_user.id, price: 0})
+        Mentor.create({user_id: current_user.id, price: 0, active: true})
       end
     end
 
