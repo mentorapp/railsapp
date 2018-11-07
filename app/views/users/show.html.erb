@@ -54,10 +54,10 @@
       <p>Stripe User Id: <%= @my_mentor_profile.stripe_user_id %></p>
     <% end %>
     <hr>
-    <h3>Mentor Sessions</h3>
+    <h4>Mentor Sessions</h4>
 
     <% if @mentor_bookings.length == 0 %>
-      <h6>You are not booked to mentor any sessions</h6>
+      <p>You are not booked to mentor any sessions</p>
     <% else %>
       <h6>You are booked to mentor the following sessions: </h6>
     <!-- Edit and destroy buttons for bookings? -->
@@ -68,18 +68,18 @@
     <hr>
   <% end %>
   
-  <h3>Mentee Sessions</h3>
+  <h4>Mentee Sessions</h4>
 
   <% if @mentee_bookings.length == 0 %>
-    <h6>You have not booked any sessions with mentors.</h6>
+    <p>You have not booked any sessions with mentors.</p>
   <% else %>
-    <p>You are booked to be mentored in the following sessions: </p>
+    <h6>You are booked to be mentored in the following sessions: </h6>
     <% @mentee_bookings.each_with_index do |booking, index| %>
       <p>You have a booking with: <%= @mentors[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
     <% end %>
   <% end %>
   <hr>
-  <h3>Reviews given</h3>
+  <h4>Reviews given</h4>
 
   <% if @user.reviews.length > 0 %>
     <% @user.reviews.each do |review| %>

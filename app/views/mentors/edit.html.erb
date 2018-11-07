@@ -1,12 +1,41 @@
-<div class="container">
-  <h1>Edit My Mentor Profile</h1>
+<!-- Page Content -->
+<div class="container mt-4">
+  
+    <!-- Page Content -->
 
+<%= image_tag("startup-594090_1920.jpg", class: "bg", alt: "") %>
+
+    <div class="container mt-5 mb-5">
+
+    <div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+    <div class="card pl-5 pr-5 pt-5 pb-5">
+
+<div class="container">
+  <h2 class="card-title pink">Edit Mentor Profile</h2>
+  <hr>
   <%= render 'form', mentor: @mentor %>
 
-  <h1>Delete My Mentor Profile</h1>
+  <br>
+  <hr>
+
+  <h4 class="card-title">Delete My Mentor Profile</h4>
 
   <p>Would you like to remove your mentor profile from MyMentor? You will still be able to log in and use the app as a mentee, but all your mentor details will be destroyed.</p>
   <p>NB: If you have any mentor bookings on this profile you will be unable to delete your account. If you wish to, please contact the administrators.</p>
 
-  <%= button_to "Delete my mentor profile", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+  <%= button_to "Delete Mentor Profile", mentor_path(@mentor), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+
+  <hr>
+  <br>
+
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
