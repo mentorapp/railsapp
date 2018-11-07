@@ -236,7 +236,7 @@ The Mentor table is associated with the User table with user_id reference as it 
 Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
 ![Database Schema - Initial](docs/MentorMe_Database.png)
 
-*Database Schema - Final*
+![Database Schema - Final](docs/MentorMe_Database_Final.png)
 
 ## 15. Provide User stories for your App.
 
