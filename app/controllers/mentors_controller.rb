@@ -34,20 +34,32 @@ class MentorsController < ApplicationController
       redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
     end
     if @mentor.update(mentor_params)
-      redirect_to users_show_path
+      if params[:deactivate] == '1'
+        @mentor.update(active: false)
+        redirect_to users_show_path, notice: 'You have successfully deactivated your mentor account'
+      elsif params[:activate] == '1'
+        @mentor.update(active: true)
+        redirect_to users_show_path, notice: 'You have successfully re-activated your mentor account'
+      else
+        redirect_to users_show_path, notice: 'You have successfully updated your details'
+      end
     else
       render :edit
     end
   end
 
   def destroy
-    unless current_user.id == Mentor.find(params[:id]).user_id
-      redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
-    end
-    if @mentor.destroy
-      redirect_to users_show_path, notice: 'Mentor profile successfully deleted'
+    if Booking.find_by(mentor_id: @mentor.user_id).nil?
+      unless current_user.id == Mentor.find(params[:id]).user_id
+        redirect_to users_show_path, notice: 'You are not authorised to edit that profile.'
+      end
+      if @mentor.destroy
+        redirect_to users_show_path, notice: 'Mentor profile successfully deleted'
+      else
+        redirect_to users_show_path, notice: 'Mentor profile could not be deleted at this time. Please contact app owners.'
+      end
     else
-      redirect_to users_show_path, notice: 'Mentor profile could not be deleted at this time. Please contact app owners.'
+      redirect_to edit_mentor_path, notice: 'Error: You can not delete your account because you still have booking sessions to attend to. Please deactivate your account to prevent further bookings'
     end
   end
 
