@@ -62,7 +62,7 @@
       <h6>You are booked to mentor the following sessions: </h6>
     <!-- Edit and destroy buttons for bookings? -->
       <% @mentor_bookings.each_with_index do |booking, index| %>
-      <p>You have a booking with: <%= @mentees[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>.</p>
+      <p>You have a booking with: <%= @mentees[index].username %> on <%= booking.start_time.strftime("%d, %B") %> at <%= booking.start_time.strftime("%H:%M") %>. <%= link_to 'Edit Booking Time', edit_booking_path(booking) %></p>
       <% end %>
     <% end %>
     <hr>

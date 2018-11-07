@@ -1,16 +1,16 @@
-<h1>New Booking</h1>
+<h1>Edit Booking</h1>
 
 <%= form_for @booking do |f| %>
 
-  <%= f.hidden_field(:mentor_id, value: params[:mentor_id]) %>
-  <%= f.hidden_field(:price, value: 0) %>
+  <%= f.hidden_field(:mentor_id, value: @booking.mentor_id) %>
+  <%= f.hidden_field(:price, value: @booking.price) %>
   <div class="field form-group">
       <%= f.label :'Booking date and time' %><br />
       <%= f.datetime_select :start_time, class: "form-control", autofocus: true %>
   </div> <br>
 
   <div class="actions">
-      <%= f.submit "Book Session", class: "btn btn-primary" %>
+      <%= f.submit "Update Session", class: "btn btn-primary" %>
   </div>
 
 <% end %>
