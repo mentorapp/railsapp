@@ -29,9 +29,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(current_user.id)
     @my_mentor_profile = Mentor.find_by(user_id: current_user.id)
-    if params[:code]
-      notice = stripe_connect
-    end
     @bookings = Booking.all
     @mentor_bookings = []
     @mentors = []
@@ -45,6 +42,10 @@ class UsersController < ApplicationController
         @mentee_bookings << booking
         @mentors << User.find(booking.mentor_id)
       end
+    end
+    if params[:code]
+      message = stripe_connect
+      redirect_to users_show_path, notice: message
     end
   end
 end
