@@ -20,10 +20,12 @@
     <div class="field">
         <p><%= f.label :keywords %></p>
         <%= f.text_field :keywords, class: "form-control", placeholder: "John Smith, JavaScript" %>
+        <%= f.label :skills %><br>
+        <%= f.text_field :keywords %>
     </div>
     <br>
     <div class="field">
-        <p><%= f.label :min_price, "Price Range" %></p>
+        <p><%= f.label :min_price, "Price Range in Dollars" %></p>
     <div class="row justify-content-center">
     <div class="col-md-6"><%= f.number_field :min_price, size: 10, class: "form-control", placeholder: "$10" %></div>
     <div class="col-md-6"><%= f.number_field :max_price, size: 10, class: "form-control", placeholder: "$100" %></div>

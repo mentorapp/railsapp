@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    authorize @booking
   end
 
   # POST /products
@@ -42,7 +41,7 @@ class BookingsController < ApplicationController
   def update
     respond_to do |format|
       if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'booking was successfully updated.' }
+        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
         format.json { render :show, status: :ok, location: @booking }
       else
         format.html { render :edit }
@@ -54,7 +53,6 @@ class BookingsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    authorize @booking
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
