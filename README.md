@@ -369,6 +369,7 @@ Some of the legal obligations that must be followed in regards to handling user 
     - An explanation on how and when a user is notified about the changes to the policy
     - A form of confirmation that the user has read the Privacy Policy
     - A drawback however, if a mentor deletes their profile, they will delete all associated information linked to their data including their payment information
+-
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
