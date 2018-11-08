@@ -242,7 +242,8 @@ MyMentor also makes use of the transactional email API service MailGun, which al
 
 ## 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
-Corey
+Airtasker: 
+Airtasker would have a 'User' model quite similar to ours. It would have basic attributes, such as 'name', 'email' and 'contact number' etc. There would also be a 'Worker' model which would include a foreign key of 'User_ID' connecting to the 'User' model. The 'User' and 'Worker' models would have a many-to-many relationship through a 'Task' model. The 'Task' model would belong to 'users' and 'workers' with foreign keys of 'user_id' and 'worker_id'. Other models in addition to this would likely include 'Review', 'Search', 'Message' etc.
 
 ## 12. Discuss the database relations to be implemented.
 
@@ -423,13 +424,11 @@ Some of the legal obligations that must be followed in regards to handling user 
 inspiration, collaboration, networking
 aspirational tone
 
-edgy
-
-ask-anyone
+edgy, challange the status quo, disruptive, innovative
 
 **Brand references**
 
-Airbnb, TaskRabbit
+Airbnb, TaskRabbit, AirTasker, Fiver
 
 **Target Demographic**
 
@@ -506,8 +505,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 ![Day 4 Slack Channel](docs/day-4-slack.png)
 
 *Day 5 Slack Channel*
-
-![Day 4 Slack Channel](docs/day-5-slack.png)
 
 ![Day 5 Slack Channel](docs/day-5-slack.png)
 
