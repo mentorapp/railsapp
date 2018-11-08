@@ -81,6 +81,8 @@ See SAQs Qn15
 
 **A workflow diagram of the user journey/s.**
 
+![user flow diagram](docs/user_flow_diagram.png)
+
 **Wireframes**
 
 See SAQs Qn16
