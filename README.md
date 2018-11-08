@@ -187,7 +187,7 @@ Our app follows the classic Model-View-Controller architecture of Rails Apps. Th
 
 *Models*
 
-We have the following Models: booking, mentor, review, search and user.
+We have the following Models: Booking, Mentor, Review, Search and User.
 
 *Views*
 
@@ -220,11 +220,25 @@ MyMentor has a number of controllers in charge of different parts of the app. Th
 ## 9. Explain the different high-level components (abstractions) in your App.
 
 *Models*
-- 
-    - 
+  
+The models in MyMentor are an abstraction of the business logic of the app. The aim of MyMentor is to connect mentors and mentees in the tech industry in Melbourne. The models reflect this in the way the User and Mentor models are set up. We assume that anyone who has an account on the app is a mentee, so anyone who signs up as a user is represented by the User model and is able to make bookings with Mentors.
+
+The Mentor model represent those users who choose to become mentors. Each mentor instance is associated with a user instance, and contains information that only mentors need to provide, such as the price per session, and their skills and background.
+
+The Booking model is an abstraction of a booked session, and it is connected to two users - one as the mentor and one as the mentee. It also has a start time. In future iterations of the app, the Booking model will expand to also have a location.
+
+The Review model is still in development, but represents reivews given by mentees to mentors.
+
+The Booking Mailer is not listed under the other models, but does function as one.
+
 *Views*
-- 
-    - 
+
+The views are separated by their connections to particular models, controllers or helpers or by their function as a partial. 
+
+Layouts: these views contain the HTML layout for each webpage, including the meta tags, html tags, head and body tags. They contain a <% yield %> command which instructs Rails to put in the rest of the file as related to the file path.
+
+Shared: these views are all partials that are shared across many of the views of the app. The footer and nav refer to the navigation bar and footer bar on the website. _mentor_cards refers to the layout of the mentor info cards on the pages that the mentors are listed out - the 'Meet the Mentors!' page and the search/show page.
+
 *Controller*
 - 
     - 
