@@ -307,15 +307,19 @@ As a user I should be able to:
 ![Booking Confirmation Page Tablet](docs/Booking_Confirmation_tablet.png)
 
 *Mentor Index Page Mobile*
+
 ![Mentor Index Page Mobile](docs/Mentor_mobile.png)
 
 *Mentor Index Page Mobile*
+
 ![Mentor Index Page Mobile](docs/Index_mobile.png)
 
 *Profile Page Mobile*
+
 ![Profile Page Mobile](docs/Profile_mobile.png)
 
 *Form Page Mobile*
+
 ![Form Page Mobile](docs/Form_page_mobile.png)
 
 ## 17. Describe the way tasks are allocated and tracked in your project.
