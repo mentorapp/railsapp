@@ -398,8 +398,8 @@ Some of the legal obligations that must be followed in regards to handling user 
     - Transparency to how data is handled when a user wishes to delete their information
     - An explanation on how and when a user is notified about the changes to the policy
     - Confirmation that the user has read the Privacy Policy
-- Ensure we backup data consistently incase data it is lost
 - Data must be disposed of securely when appropriate. Failure to do so may result in unauthorized access to users' data
+- In the event of a breach, individuals who have been affected should be notified immediately to prevent the risk of serious harm. 
 
 **Accessibility**
  <!-- <span class="sr-only">(current)</span> -->
