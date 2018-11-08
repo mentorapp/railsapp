@@ -285,6 +285,9 @@ As a user I should be able to:
 *Landing Page*
 ![Homepage](docs/desktoplandingpage.png)
 
+*Mentor Index Page*
+![Mentor Index Page](docs/mentorshow.png)
+
 ## 17. Describe the way tasks are allocated and tracked in your project.
 
 During Sprint Planning at the start of the project we created tasks on our team trello board. Each morning during the stand-up, team members choose what they would like to work on and the task is allocated to them on Trello and moved to the 'Doing' list. At the end of the day we come together and assess the progress of the items as a team, deciding which ones are ready to go in the 'Done' list and which should remain for the following day.
