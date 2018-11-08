@@ -280,7 +280,10 @@ As a user I should be able to:
 
 ## 16. Provide Wireframes for your App.
 
-EVERYONE
+**Desktop**
+
+*Landing Page*
+![Homepage](docs/desktoplandingpage.png)
 
 ## 17. Describe the way tasks are allocated and tracked in your project.
 
