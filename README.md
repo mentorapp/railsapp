@@ -255,8 +255,11 @@ The Mentor table is associated with the User table with user_id reference as it 
 ## 14. Provide your database schema design.
 
 *Database Schema - Initial*
+
 Green tables are our MVP, red tables are the beginnings of a plan for some additional features we hope to get to.
 ![Database Schema - Initial](docs/MentorMe_Database.png)
+
+*Database Schema - Final*
 
 ![Database Schema - Final](docs/MentorMe_Database_Final.png)
 
@@ -540,5 +543,3 @@ If we are to actually launch the app, we definitely need authorization from pund
 We could allow users to delete their profiles from the database, and we could deal with the foreign key contraints by deleting their reviews, bookings and mentor profile before deleting their user profile. However, this allows someone to sign up as a mentor, receive payment via Stripe for sessions, then delete their profile before these sessions occur leaving no record of the bookings.
 
 Instead, we need to keep a record of the data of anyone who has booked any sessions as a mentor. So if you are a user without a mentor profile or any bookings, you can delete your profile at any time. If you are a mentor without any bookings, you can delete your mentor profile. If you have bookings but don't wish to appear on the mentors page at the current time you can deactivate your mentor profile (yet to be implemented). Any reviews given to or by a user will disappear when their account is deleted.
-
-
