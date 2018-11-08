@@ -64,12 +64,22 @@ See SAQs Qn5
 
 To make use of this app, you will need to fork the repo and clone a copy to your machine. Sign in to GitHub, navigate to the project page, and click on the 'Fork' button on the top right. While you are there you could leave us a star as well!
 
-On your copy of the repo, click the 'Clone or download' button and copy
+On your copy of the repo, click the 'Clone or download' button and copy the link provided. On your command line, navigate to the folder you would like to clone the repo to, and run:
+```
+git clone <link-from-github>
+```
+A good option for managing gems is bundler: [Bundle website](https://bundler.io/)
 
+If you have bundler, install gems for the project with from the project folder with:
+```
+bundle install
+```
+Set up accounts for the following services:
+- MailGun
+- Stripe Connect Platform - instructions in this blog post series: [Stripe Connect Series](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf)
+- AWS
 
-MailGun - 
-
-Stripe Connect Platform - instructions in this blog post series: [Stripe Connect Series](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf)
+Follow the configuration instructions for these services to link them to the app.
 
 **Design process** 
 
@@ -105,9 +115,17 @@ Problems this app will solve:
 
 • Hard to develop communication and management skills working in a highly technical enviroment
 
-App MVP
-Project MVP
-Creative development time
+APP MVP Timeline:  Day 1 - Day 4.
+Our goal is to achieve the MVP functionality for our app by day 4 in week 1.
+
+PROJECT MVP Timeline: Day 4 - Day 7.
+Our goal is to achieve the MVP for the project requirements by day 7 in week 2.
+
+ADDITIONAL FEATURES & STYLING Timeline: Day 7 - Day 8.
+Our goal is to implement extra functionality during day 7 and 8 in week 2.
+
+PRESENTATION, PRODUCTION & REVIEW Timeline: Day 9.
+Our goal is to finish all presentation requirements as well as push our finished app to production on the final day, day 9 in week 2.
 
 **Screenshots of Trello board(s)**
 
