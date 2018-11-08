@@ -541,7 +541,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 7 Slack Channel*
 ![Day 7 Slack Channel](docs/day-7-slack.png)
 
-
 # Authentication Testing
 
 Question: do we need pundit?
