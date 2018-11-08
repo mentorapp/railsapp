@@ -586,7 +586,7 @@
   }
 
   .background-image {
-    background-image: image-url("rawpixel-682403-unsplash.jpg");
+    background-image: image-url("annie-spratt-1113336-unsplash.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -821,6 +821,10 @@
     order: 12;
   }
   
+  .offset-nil {
+    margin-left: -1rem;
+  }
+
   .offset-1 {
     margin-left: 8.333333%;
   }
