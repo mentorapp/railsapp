@@ -239,9 +239,10 @@ Layouts: these views contain the HTML layout for each webpage, including the met
 
 Shared: these views are all partials that are shared across many of the views of the app. The footer and nav refer to the navigation bar and footer bar on the website. _mentor_cards refers to the layout of the mentor info cards on the pages that the mentors are listed out - the 'Meet the Mentors!' page and the search/show page.
 
-*Controller*
-- 
-    - 
+*Controllers*
+  
+
+
 ## 10. Detail any third party services that your App will use.
 
 MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog series: 
