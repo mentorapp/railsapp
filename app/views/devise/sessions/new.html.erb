@@ -1,5 +1,18 @@
+<!-- Page Content -->
+<div style="height: 100vh;">
+
 <div class="container">
-  <h2>Log in</h2>
+
+<%= image_tag("priscilla-du-preez-623040-unsplash.jpg", class: "bg", alt: "") %>
+
+<div class="container mt-5 mb-5">
+
+<div class="row justify-content-center">
+
+<div class="card col-lg-6 pl-5 pr-5 pt-5 pb-5">
+
+  <h2 class="card-title pink">Log In</h2>
+  <hr>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
@@ -18,11 +31,19 @@
         <%= f.label :remember_me %>
       </div>
     <% end -%>  
+    <br>
 
     <div class="actions">
       <%= f.submit "Log in", class: "btn btn-primary" %>
     </div> <br>
   <% end %>
 
+  <div class="actions">
   <%= render "devise/shared/links" %>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
 </div>
