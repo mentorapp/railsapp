@@ -293,6 +293,30 @@ As a user I should be able to:
 *Edit User Details Form Page - design is similar for all form pages*
 ![Mentor Index Page](docs/pageformpage.png)
 
+*Contact Page Tablet*
+![Contact Page Tablet](docs/Contact_tablet.png)
+
+*Mentor Profile Page Tablet*
+![Mentor Profile Page Tablet](docs/Mentor_Profile_tablet.png)
+
+*Bookings Page Tablet*
+![Bookings Page Tablet](docs/Bookings_tablet.png)
+
+*Booking Confirmation Page Tablet*
+![Booking Confirmation Page Tablet](docs/Booking_Confirmation_tablet.png)
+
+*Mentor Index Page Mobile*
+![Mentor Index Page Mobile](docs/Mentor_mobile.png)
+
+*Mentor Index Page Mobile*
+![Mentor Index Page Mobile](docs/Index_mobile.png)
+
+*Profile Page Mobile*
+![Profile Page Mobile](docs/Profile_mobile.png)
+
+*Form Page Mobile*
+![Form Page Mobile](docs/Form_page_mobile.png)
+
 ## 17. Describe the way tasks are allocated and tracked in your project.
 
 During Sprint Planning at the start of the project we created tasks on our team trello board. Each morning during the stand-up, team members choose what they would like to work on and the task is allocated to them on Trello and moved to the 'Doing' list. At the end of the day we come together and assess the progress of the items as a team, deciding which ones are ready to go in the 'Done' list and which should remain for the following day.
