@@ -25,6 +25,10 @@ class BookingsController < ApplicationController
   # POST /products.json
   def create
     @booking = Booking.new(booking_params)
+    @mentor = Mentor.find_by(user_id: @booking.mentor_id)
+    @mentee = current_user
+    BookingMailer.with(mentee: @mentee, mentor: @mentor, booking: @booking).new_booking_mentor.deliver_now
+    BookingMailer.with(mentee: @mentee, mentor: @mentor, booking: @booking).new_booking_mentee.deliver_now
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
