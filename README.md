@@ -1,10 +1,10 @@
 # MyMentor
 
-[App deployed on Heroku] (https://techmentor.herokuapp.com/)
-
 Rails App by Simon, Corey and Vanessa.
 
 ## Contents
+
+[Project README Requirements](#project-readme-requirements)
 
 [Working Info](#working-info)
 
@@ -16,6 +16,105 @@ Rails App by Simon, Corey and Vanessa.
 
 [Team Discussions](#team-discussions)
 
+## Project README Requirements
+
+**A link (URL) to your published App**
+
+[App deployed on Heroku](https://techmentor.herokuapp.com/)
+
+**A link to your GitHub repository**
+
+[GitHub Repo](https://github.com/mentorapp/railsapp)
+
+**Problem definition / purpose**
+
+See SAQs Qns 1 and 2
+
+**Functionality / features**
+
+Features available before signing up:
+- Read about the app, contact the app creators on LinkedIn or Twitter, and read the Terms and Privacy Policy.
+- Account Sign Up including acceptance of Terms and Privacy Policy.
+Features available after signing up:
+- Option to become a mentor by ticking a checkbox.
+- Users can add a profile image, or be represented by the default image of a kitten.
+- Users can update their profile information and delete their account.
+- Users (mentees) can see a list of mentors and search the list by name, skills or session price.
+- Users (mentees) can book a session with a mentor, either a free session or a paid session, and make payment via Stripe. Mentor and mentee will both receive email confirmation of this booking.
+- Mentors can set a price for consultation, link their Stripe account to our Stripe Connect Platform, and recieve payment for their services through the app.
+- Mentors can choose to deactivate their mentor profile, taking them off the list displayed to mentees.
+- Mentors can update their profile and, if they are not booked for any sessions, delete their profile.
+
+**Screenshots**
+
+These are screenshots of the app in production, deployed on Heroku.
+
+![Landing Page](docs/app-landing-page.png)
+
+![Sign Up Page](docs/app-signup-page.png)
+
+![Mentor Search Page](docs/app-search-page.png)
+
+![User Dashboard](docs/app-user-dashboard.png)
+
+**Tech stack**  
+See SAQs Qn5
+
+**Instructions on how to setup, configure and use your App.**
+
+To make use of this app, you will need to fork the repo and clone a copy to your machine. Sign in to GitHub, navigate to the project page, and click on the 'Fork' button on the top right. While you are there you could leave us a star as well!
+
+On your copy of the repo, click the 'Clone or download' button and copy
+
+
+MailGun - 
+
+Stripe Connect Platform - instructions in this blog post series: [Stripe Connect Series](https://medium.com/@nimmoking/integrating-stripe-connect-with-rails-5-part-1-3-a3007e4bc2cf)
+
+**Design process** 
+
+See [Design Planning and Inspiration](#design-planning-and-inspiration)
+
+**User stories**
+
+See SAQs Qn15
+
+**A workflow diagram of the user journey/s.**
+
+**Wireframes**
+
+See SAQs Qn16
+
+**Database Entity Relationship Diagrams**
+
+See SAQs Qn14
+
+**Project plan & timeline**
+
+*Sprint Planning*
+
+Friday Oct 26 and Monday Oct 29
+
+App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
+
+Problems this app will solve:
+
+• Hard to meet developers in the industry
+
+• Hard to develop communication and management skills working in a highly technical enviroment
+
+App MVP
+Project MVP
+Creative development time
+
+**Screenshots of Trello board(s)**
+
+See [Team Communication](#team-communication)
+
+**Answers to the Short Answer questions (Section 2.2)** 
+
+See [Short Answer Questions](#short-answer-questions)
+---
 
 ## Working Info
 
@@ -52,65 +151,11 @@ In order to use the seed file to populate our database we need to do the followi
 
 - Deploy either in the morning or early in the afternoon as this is less stressful than at 4.45pm!
 
-## Sprint Planning
-
-Friday Oct 26 and Monday Oct 29
-
-App Idea - To connect Mentors and Mentees in the Tech Industry in Melbourne.
-
-Problems this app will solve:
-
-• Hard to meet developers in the industry
-
-• Hard to develop communication and management skills working in a highly technical enviroment
-
-**User Personas:**
-
-• Coder Academy student - John is a career changer and has recently finished a bootcamp course at Coder Academy. He is confused about what direction he should be taking and would like to sit down with an experienced developer to gain some career advice
-
-• Senior Developer - Jane is a Senior Developer at a large company in Melbourne. She loves the idea of sharing her knowledge and giving back to the industry but doesn't know where to start
-
-• Sarah is a freelance designer who works in website design. She would love to expand her network within the tech industry but is unsure of where or how to start
-
-• Alex is currently learning to code online in his spare time. He is struggling with databases and would like help from a mentor to learn more about it one on one
-
-• Javascript Developer - Alicia is a mid-level Javascript developer who has a few years experience working for a start-up. She currently works 3 days a week and loves the idea of supplementing her income by teaching code. She isn't a qualified teacher but has amazing skills in the area of Javascript. She would love to improve her communication and managing skills to help her move up in her own career
-
-*NB: Also created user stories during this session, but have moved these down into question 15 of the SAQs*
-
 **User flow**
 
 • Wireframes
 
 • ERD
-
-**Ethical Considerations:**
-
-• User reviews
-
-• Code of conduct
-
-• Code of conduct violations
-
-**Stripe Payment Discussion Friday Nov 2nd**
-
-*Charging People with Stripe and Getting People Paid*
-
-Charging people and paying others: Stripe used to have a way to do this with someone's bank card but even then we would be storing people's bank cards. It looks like Stripe Connect sorts all this out for you - user verification, selling, etc.
-
-In terms of people being happy to mentor for no charge, it may be that their button is just one to make a booking and doesn't talk to Stripe, so Stripe connect is only involved if people wish to charge for their services. That way people only have to sign up for a Stripe seller account if they want to make money using the service. Looks like the standard service is the one that would work best for us - doesn't cost anything extra and integration is apparently pretty easy. Given that our user base is tech people, they should be tech savvy enough to create a Stripe account if they want to charge for their services on the platform.
-
-Chatted as a team and decided to implement Stripe Connect for any payments over 50c (and mentors will need to have a Stripe Account to be paid). If they choose not to be paid, the button to book them will be a standard rails button, not a Stripe button. (The is also good as you won't have to enter card details and be charged 50c if they mentor doesn't want to be paid.)
-
-- Added a stripe charge id to bookings table
-- Added a stripe user id to mentors table for when they authorise their account (we only support standard Stripe accounts - they require us to take the least responsibility which is good because we are new developers)
-
-Info for Mentors Signing up:
-- That they’ll need to create and maintain their Stripe account
-- That they’ll need to handle chargebacks and all customer service issues
-- Who is responsible for paying the Stripe fees
-- What, if any, fees the platform charges
-
 
 ## Short Answer Questions
 
@@ -290,6 +335,18 @@ As a user I should be able to:
 - Book a time with a mentor/provide my availability as a mentor
 - Message other users about bookings
 
+**User Personas:**
+
+- Coder Academy student - John is a career changer and has recently finished a bootcamp course at Coder Academy. He is confused about what direction he should be taking and would like to sit down with an experienced developer to gain some career advice
+
+- Senior Developer - Jane is a Senior Developer at a large company in Melbourne. She loves the idea of sharing her knowledge and giving back to the industry but doesn't know where to start
+
+- Sarah is a freelance designer who works in website design. She would love to expand her network within the tech industry but is unsure of where or how to start
+
+- Alex is currently learning to code online in his spare time. He is struggling with databases and would like help from a mentor to learn more about it one on one
+
+- Javascript Developer - Alicia is a mid-level Javascript developer who has a few years experience working for a start-up. She currently works 3 days a week and loves the idea of supplementing her income by teaching code. She isn't a qualified teacher but has amazing skills in the area of Javascript. She would love to improve her communication and managing skills to help her move up in her own career
+
 ## 16. Provide Wireframes for your App.
 
 **Desktop**
@@ -303,6 +360,11 @@ As a user I should be able to:
 *Edit User Details Form Page - design is similar for all form pages*
 ![Mentor Index Page](docs/pageformpage.png)
 
+*Mentor Profile page - the My Info page is similar*
+![User Profile Page](docs/desktopprofile.png)
+
+**Tablet**
+
 *Contact Page Tablet*
 ![Contact Page Tablet](docs/Contact_tablet.png)
 
@@ -314,6 +376,8 @@ As a user I should be able to:
 
 *Booking Confirmation Page Tablet*
 ![Booking Confirmation Page Tablet](docs/Booking_Confirmation_tablet.png)
+
+**Mobile**
 
 *Mentor Index Page Mobile*
 
@@ -566,6 +630,25 @@ Bookings: do we want to go the route of sending an email, or do we want to go th
 
 Decision: do emails first and then shoot for a booking system.
 
+**Stripe Payment Discussion Friday Nov 2nd**
+
+*Charging People with Stripe and Getting People Paid*
+
+Charging people and paying others: Stripe used to have a way to do this with someone's bank card but even then we would be storing people's bank cards. It looks like Stripe Connect sorts all this out for you - user verification, selling, etc.
+
+In terms of people being happy to mentor for no charge, it may be that their button is just one to make a booking and doesn't talk to Stripe, so Stripe connect is only involved if people wish to charge for their services. That way people only have to sign up for a Stripe seller account if they want to make money using the service. Looks like the standard service is the one that would work best for us - doesn't cost anything extra and integration is apparently pretty easy. Given that our user base is tech people, they should be tech savvy enough to create a Stripe account if they want to charge for their services on the platform.
+
+Chatted as a team and decided to implement Stripe Connect for any payments over 50c (and mentors will need to have a Stripe Account to be paid). If they choose not to be paid, the button to book them will be a standard rails button, not a Stripe button. (The is also good as you won't have to enter card details and be charged 50c if they mentor doesn't want to be paid.)
+
+- Added a stripe charge id to bookings table
+- Added a stripe user id to mentors table for when they authorise their account (we only support standard Stripe accounts - they require us to take the least responsibility which is good because we are new developers)
+
+Info for Mentors Signing up:
+- That they’ll need to create and maintain their Stripe account
+- That they’ll need to handle chargebacks and all customer service issues
+- Who is responsible for paying the Stripe fees
+- What, if any, fees the platform charges
+
 **Wed Nov 8**
 
 *Authentication Discussion and Testing*
@@ -582,8 +665,8 @@ Stripe connect: someone would need our secret API key to get a stripe_user_id an
 Mentors edit page: you can currently access any mentor edit page by using mentor/:id/edit - need to include some user checks on this one. 
 Update: there is now a check that the logged in user is the one who is the mentor that they are trying to edit. If they are not, they get redirected to their own user profile with a notice saying they are not allowed to edit this profile.
 
-If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
 
+If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
 If we are to actually launch the app, we definitely need authorization from pundit on all data changes (bookings, reviews, mentors). However, our MVP currently meets expectations with some form of authorization.
 
 *Privacy Discussion*
