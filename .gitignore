@@ -29,4 +29,5 @@
 # Ignore .env file config variables are stored
 .env
 
-.DS_store
+# Ignore .DS_Store as this is a local apple file related to formatting
+.DS_Store

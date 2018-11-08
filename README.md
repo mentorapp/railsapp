@@ -251,7 +251,8 @@ MyMentor also makes use of the transactional email API service MailGun, which al
 
 ## 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
-Corey
+Airtasker: 
+Airtasker would have a 'User' model quite similar to ours. It would have basic attributes, such as 'name', 'email' and 'contact number' etc. There would also be a 'Worker' model which would include a foreign key of 'User_ID' connecting to the 'User' model. The 'User' and 'Worker' models would have a many-to-many relationship through a 'Task' model. The 'Task' model would belong to 'users' and 'workers' with foreign keys of 'user_id' and 'worker_id'. Other models in addition to this would likely include 'Review', 'Search', 'Message' etc.
 
 ## 12. Discuss the database relations to be implemented.
 
@@ -301,6 +302,34 @@ As a user I should be able to:
 
 *Edit User Details Form Page - design is similar for all form pages*
 ![Mentor Index Page](docs/pageformpage.png)
+
+*Contact Page Tablet*
+![Contact Page Tablet](docs/Contact_tablet.png)
+
+*Mentor Profile Page Tablet*
+![Mentor Profile Page Tablet](docs/Mentor_Profile_tablet.png)
+
+*Bookings Page Tablet*
+![Bookings Page Tablet](docs/Bookings_tablet.png)
+
+*Booking Confirmation Page Tablet*
+![Booking Confirmation Page Tablet](docs/Booking_Confirmation_tablet.png)
+
+*Mentor Index Page Mobile*
+
+![Mentor Index Page Mobile](docs/Mentor_mobile.png)
+
+*Mentor Index Page Mobile*
+
+![Mentor Index Page Mobile](docs/Index_mobile.png)
+
+*Profile Page Mobile*
+
+![Profile Page Mobile](docs/Profile_mobile.png)
+
+*Form Page Mobile*
+
+![Form Page Mobile](docs/Form_page_mobile.png)
 
 ## 17. Describe the way tasks are allocated and tracked in your project.
 
@@ -431,13 +460,11 @@ Some of the legal obligations that must be followed in regards to handling user 
 inspiration, collaboration, networking
 aspirational tone
 
-edgy
-
-ask-anyone
+edgy, challange the status quo, disruptive, innovative
 
 **Brand references**
 
-Airbnb, TaskRabbit
+Airbnb, TaskRabbit, AirTasker, Fiver
 
 **Target Demographic**
 
@@ -530,7 +557,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 
 *Day 8 Slack Channel*
 ![Day 8 Slack Channel](docs/day-8-slack.png)
-
 
 ## Team Discussions
 

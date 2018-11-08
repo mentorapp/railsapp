@@ -1,15 +1,14 @@
 <div style="height: 100vh;">
-  
-    <!-- Page Content -->
+
+<div class="container">
 
 <%= image_tag("rawpixel-384899-unsplash.jpg", class: "bg", alt: "") %>
 
-<div class="container mt-5 mb-5 align-middle">
-<div class="row justify-content-center">
-<div class="col-md-6">
-<div class="card pl-5 pr-5 pt-5 pb-5">
+<div class="container mt-5 mb-5">
 
-<div class="container">
+<div class="row justify-content-center">
+
+<div class="card col-lg-6 pl-5 pr-5 pt-5 pb-5">
 
 <h1 class="pink">Advanced Search</h1>
 <hr>
@@ -26,13 +25,11 @@
     <div class="col-md-6"><%= f.number_field :min_price, size: 10, class: "form-control", placeholder: "10" %></div>
     <div class="col-md-6"><%= f.number_field :max_price, size: 10, class: "form-control", placeholder: "100" %></div>
     </div>
-    </div>g
+    </div>
     <br>
     <div class="actions"><%= f.submit "Search", name: nil, class: "btn btn-primary" %></div>
 <% end %>
 
-</div>
-</div>
 </div>
 </div>
 </div>
