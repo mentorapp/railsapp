@@ -28,3 +28,5 @@
 
 # Ignore .env file config variables are stored
 .env
+
+.DS_Store
