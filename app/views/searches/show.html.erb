@@ -1,3 +1,20 @@
-<h1>Search Results</h1>
+
+<header class="jumbotron background-image">
+    <div class="container">
+        <h1 class="display-4 over-image">Search Results</h1>
+        <%= form_tag mentors_path, method: :get do %>
+          <div class="row">
+            <div class="col-3"> 
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter mentor name" %>
+            </div>
+            <div class="col-4">
+            <%= button_tag "Search", name: nil, class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+        <br>
+        <%= link_to "Advanced Search", new_search_path %>
+    </div>
+</header>
 
 <%= render "shared/mentor_cards" %>

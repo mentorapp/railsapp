@@ -2,8 +2,9 @@ You have made a booking!
 
 ===================================
 
-You have booked a session with *mentor*. Their email address is *email*.
+Your booking is with <%= @mentor.user.username %> on <%= @booking.start_time.strftime("%d, %B") %> at <%= @booking.start_time.strftime("%H:%M") %>.
 
-Please arrange this session via email.
+Please contact them via email to arrange the meeting: <%= @mentor.user.email %>
 
-Thanks for using TechMentor!
+Cheers,
+MyMentor

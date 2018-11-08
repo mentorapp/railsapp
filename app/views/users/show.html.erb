@@ -1,15 +1,14 @@
-<div class="container mt-4">
-  
-    <!-- Page Content -->
+<!-- Page Content -->
+<div class="container">
 
 <%= image_tag("rawpixel-415589-unsplash.jpg", class: "bg", alt: "") %>
 
 <div class="container mt-5 mb-5">
-<div class="row justify-content-center">
-<div class="col-md-6">
-<div class="card pl-5 pr-5 pt-5 pb-5">
 
-<div class="container">
+<div class="row justify-content-center">
+
+<div class="card col-lg-8 pl-5 pr-5 pt-5 pb-5">
+  
   <h1 class="pink">My Dashboard</h1>
   <hr>
   <p><%= notice %></p>
@@ -29,7 +28,9 @@
   <h6>About Me:</h6><p><%= @user.about_me %></p>
   <h6>Purpose:</h6><p><%= @user.purpose %></p>
 
+  <div class="actions">
   <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary" %>
+  </div>
 
   <!-- Devise link to edit these details, destroy link to remove them as a user -->
 <hr>
@@ -39,7 +40,10 @@
     <h6>Skills:</h6><p><%= @my_mentor_profile.skills %></p>
     <h6>Availability:</h6><p><%= @my_mentor_profile.availability %></p>
     <h6>Price:</h6><p><%= number_to_currency(@my_mentor_profile.price / 100.0) %></p>
+
+    <div class="actions">
     <%= link_to 'Edit', edit_mentor_path(id: @my_mentor_profile.id), class: "btn btn-primary" %>
+    </div>
   <!-- destroy mentor profile button? -->
   <hr>
     
@@ -88,9 +92,6 @@
     <small>Review functionality is currently being built. Stay tuned!</small>
   <% end %>
 
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
