@@ -1,21 +1,14 @@
 <!-- Page Content -->
-<div class="container mt-4">
-  
-    <!-- Page Content -->
+<div class="container">
 
 <%= image_tag("rawpixel-323215-unsplash.jpg", class: "bg", alt: "") %>
 
-    <div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5">
 
-      <div class="row justify-content-center">
+<div class="row justify-content-center">
 
-    <div class="col-md-6">
+<div class="card col-lg-8 pl-5 pr-5 pt-5 pb-5">
 
-
-      <div class="card">
-      <% user = @mentor.user %>
-
-          <div class="card pl-5 pr-5 pt-5 pb-5">
           <% user = @mentor.user %>
 
           <div class="text-center"></div>
@@ -30,7 +23,6 @@
             <% end %>
             </div>
         <div class="card-body">
-          <h1 class="card-title pink"><%= user.username %></h1>
           <% if @mentor.stripe_user_id %>
             <h4><%= number_to_currency(@mentor.price / 100.0) %></h4><small>per session</small>
           <% end %>
@@ -82,11 +74,8 @@
             <% else %>
             <p>This mentor has not received a review</p>
           <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.col-lg-9 -->
-  </div>
+
 </div>
-<!-- /.container -->
+</div>
+</div>
+</div>

@@ -1,11 +1,19 @@
+<!-- Page Content -->
 <div class="container">
-  <h2>Sign up</h2>
+
+<%= image_tag("priscilla-du-preez-623040-unsplash.jpg", class: "bg", alt: "") %>
+
+<div class="container mt-5 mb-5">
+
+<div class="row justify-content-center">
+
+<div class="card col-lg-8 pl-5 pr-5 pt-5 pb-5">
+
+  <h2 class="card-title pink">Sign Up</h2>
 
   <hr>
   
   <h3><%= notice %></h3>
-
-  <h6>Find a mentor or mentee</h6>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -59,15 +67,22 @@
       <%= label_tag(:ageconfirmation, "I am over 18 and agree to abide by the terms and conditions") %>
     </div>
 
-    <small>
-      * Required fields
-    </small>
+    <small>* Required fields</small>
+    <br>
 
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>
     </div>
   <% end %>
 
+  <hr>
   <small>Already have a MentorMe account?</small>
+  <br>
+  <div class="actions">
   <%= render "devise/shared/links" %>
+  </div>
+
+</div>
+</div>
+</div>
 </div>
