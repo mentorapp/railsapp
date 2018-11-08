@@ -14,7 +14,7 @@
 
 <%= form_for @booking do |f| %>
 
-  <%= f.hidden_field(:mentor_id, value: params[:mentor_id]) %>
+  <%= f.text_field(:mentor_id, value: params[:mentor_id]) %>
   <%= f.hidden_field(:price, value: 0) %>
   <div class="field form-group">
       <%# <%= f.label :'Booking date and time' %>

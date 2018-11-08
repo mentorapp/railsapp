@@ -1,14 +1,29 @@
-<div class="container">
-  <h2>
-      Thanks, you paid 
-      <strong>
-          <%= number_to_currency(@mentor.price/100.0) %>    
-      </strong>
+<div style="height: 100vh;">
+  
+    <!-- Page Content -->
 
-      <p>
-          You purchased a session with <%= @mentor.user.username %> 
-      </p>
+<%= image_tag("rawpixel-384899-unsplash.jpg", class: "bg", alt: "") %>
 
-      <%= link_to 'Home', root_path %>
-  </h2>
+<div class="container mt-5 mb-5 align-middle">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card pl-5 pr-5 pt-5 pb-5">
+  <div class="container">
+    <h2>
+        Thanks, you paid 
+        <strong>
+            <%= number_to_currency(@mentor.price/100.0) %>    
+        </strong>
+
+        <p>
+            You purchased a session with <%= @mentor.user.username %> 
+        </p>
+
+        <%= link_to 'Home', root_path, class: "btn btn-primary" %>
+    </h2>
+  </div>
+</div>
+</div>
+</div>
+</div>
 </div>

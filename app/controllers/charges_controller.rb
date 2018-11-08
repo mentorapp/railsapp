@@ -36,9 +36,9 @@ class ChargesController < ApplicationController
                 bookingtime["start_time(3i)"].to_i, 
                 bookingtime["start_time(4i)"].to_i,
                 bookingtime["start_time(5i)"].to_i)
-      Booking.create({mentor_id: @mentor.user_id, mentee_id: current_user.id, price: @mentor.price, charge_id: charge.id, start_time: start_time})
-      BookingMailer.with(mentee: current_user, mentor: @mentor).new_booking_mentor.deliver_now
-      BookingMailer.with(mentee: current_user, mentor: @mentor).new_booking_mentee.deliver_now
+      @booking = Booking.create({mentor_id: @mentor.user_id, mentee_id: current_user.id, price: @mentor.price, charge_id: charge.id, start_time: start_time})
+      BookingMailer.with(mentee: current_user, mentor: @mentor, booking: @booking).new_booking_mentor.deliver_now
+      BookingMailer.with(mentee: current_user, mentor: @mentor, booking: @booking).new_booking_mentee.deliver_now
     end
 
     rescue Stripe::CardError => e
