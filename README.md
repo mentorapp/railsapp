@@ -1,4 +1,4 @@
-# MentorMe
+# MyMentor
 
 [App deployed on Heroku] (https://techmentor.herokuapp.com/)
 
@@ -10,11 +10,11 @@ Rails App by Simon, Corey and Vanessa.
 
 [Short Answer Questions](#short-answer-questions)
 
-[Design Planning](#design-planning)
-
-[Inspiration](#inspiration)
+[Design Planning and Inspiration](#design-planning-and-inspiration)
 
 [Team Communication](#team-communication)
+
+[Team Discussions](#team-discussions)
 
 
 ## Working Info
@@ -77,12 +77,6 @@ Problems this app will solve:
 • Javascript Developer - Alicia is a mid-level Javascript developer who has a few years experience working for a start-up. She currently works 3 days a week and loves the idea of supplementing her income by teaching code. She isn't a qualified teacher but has amazing skills in the area of Javascript. She would love to improve her communication and managing skills to help her move up in her own career
 
 *NB: Also created user stories during this session, but have moved these down into question 15 of the SAQs*
-
-**Team Meeting Thurs Nov 1st**
-
-Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (Email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
-
-Decision: do emails first and then shoot for a booking system.
 
 **User flow**
 
@@ -187,7 +181,7 @@ Our app follows the classic Model-View-Controller architecture of Rails Apps. Th
 
 *Models*
 
-We have the following Models: booking, mentor, review, search and user.
+We have the following Models: Booking, Mentor, Review, Search and User.
 
 *Views*
 
@@ -220,14 +214,29 @@ MyMentor has a number of controllers in charge of different parts of the app. Th
 ## 9. Explain the different high-level components (abstractions) in your App.
 
 *Models*
-- 
-    - 
+
+The models in MyMentor are an abstraction of the business logic of the app. The aim of MyMentor is to connect mentors and mentees in the tech industry in Melbourne. The models reflect this in the way the User and Mentor models are set up. We assume that anyone who has an account on the app is a mentee, so anyone who signs up as a user is represented by the User model and is able to make bookings with Mentors.
+
+The Mentor model represent those users who choose to become mentors. Each mentor instance is associated with a user instance, and contains information that only mentors need to provide, such as the price per session, and their skills and background.
+
+The Booking model is an abstraction of a booked session, and it is connected to two users - one as the mentor and one as the mentee. It also has a start time. In future iterations of the app, the Booking model will expand to also have a location.
+
+The Review model is still in development, but represents reivews given by mentees to mentors.
+
+The Models in MyMentor also act as abstractions of the database tables. The structure of each database table is represented in the attributes of the class that is each model, and instances of the class represent lines in the database table.
+
 *Views*
-- 
-    - 
-*Controller*
-- 
-    - 
+
+The views are separated by their connections to particular models, controllers or helpers or by their function as a partial. 
+
+Layouts: these views contain the HTML layout for each webpage, including the meta tags, html tags, head and body tags. They contain a <% yield %> command which instructs Rails to put in the rest of the file as related to the file path.
+
+Shared: these views are all partials that are shared across many of the views of the app. The footer and nav refer to the navigation bar and footer bar on the website. _mentor_cards refers to the layout of the mentor info cards on the pages that the mentors are listed out - the 'Meet the Mentors!' page and the search/show page.
+
+*Controllers*
+  
+The controllers in MyMentor act as abstractions for the database actions. They all inherit from the Application Controller, which inherits from ActionController, the Rails library for handling database interactions. All of these controllers allow us to interact with the tables in our postgresql database by making each line an instance of a Ruby object.
+
 ## 10. Detail any third party services that your App will use.
 
 MyMentor makes use of the 3rd party payment system Stripe in order to allow mentors to be paid for their time. We have created a Stripe Connect platform for our app. In the app, mentors have the option of linking their Stripe account to ours, allowing card payments made on the app to be directed to them. Extensive details on this process, and the reasoning for the choices we made in implementation, are detailed in this blog series: 
@@ -442,10 +451,9 @@ Some of the legal obligations that must be followed in regards to handling user 
 - Data must be disposed of securely when appropriate. Failure to do so may result in unauthorized access to users' data
 - In the event of a breach, individuals who have been affected should be notified immediately to prevent the risk of serious harm. 
 
-**Accessibility**
- <!-- <span class="sr-only">(current)</span> -->
+---
 
-## Design Planning
+## Design Planning and Inspiration
 
 **Brand Attributes**
 
@@ -471,7 +479,9 @@ tech-savvy (they care about auto-complete on forms, and will probably try puttin
 
 urban influence with a focus on people - connecting people - all imagery needs to focus on
 
-## Inspiration
+---
+
+**Inspiration**
 
 Once we were clear on our brand attributes and on wanting to use Bootstrap to make the detailed styling easier, we looked for websites that had the feel that we were after. We all ended up really liked websites with a salmon accenting, so found it pretty straightforward to head in that direction with the design.
 
@@ -491,6 +501,7 @@ Once we were clear on our brand attributes and on wanting to use Bootstrap to ma
 
 [Link to Figma Wireframes](https://www.figma.com/file/dtqQpWpmlBnaKRn9v5MH5xvh/MentorMe?node-id=0%3A1)
 
+---
 
 ## Team Communication
 
@@ -518,6 +529,9 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 6 Trello Board*
 ![Day 6 Trello Board](docs/day-6-trello.png)
 
+*Day 8 Trello Board*
+![Day 8 Trello Board](docs/day-8-trello.png)
+
 ## Slack
 
 *Day 1 Slack Channel*
@@ -533,7 +547,6 @@ We found the Trello board helpful for keeping track of where we were in the proj
 ![Day 4 Slack Channel](docs/day-4-slack.png)
 
 *Day 5 Slack Channel*
-
 ![Day 5 Slack Channel](docs/day-5-slack.png)
 
 *Day 6 Slack Channel*
@@ -542,7 +555,20 @@ We found the Trello board helpful for keeping track of where we were in the proj
 *Day 7 Slack Channel*
 ![Day 7 Slack Channel](docs/day-7-slack.png)
 
-# Authentication Testing
+*Day 8 Slack Channel*
+![Day 8 Slack Channel](docs/day-8-slack.png)
+
+## Team Discussions
+
+**Team Meeting Thurs Nov 1st**
+
+Bookings: do we want to go the route of sending an email, or do we want to go the route of allowing people to make full bookings on the website? Today is the time to decide which of those to push for. Could potentially go for email first to have some sort of record, then do the calendar afterwards. (Email is not MVP, but it would give us a simple solution to the booking problem which we could then build off.)
+
+Decision: do emails first and then shoot for a booking system.
+
+**Wed Nov 8**
+
+*Authentication Discussion and Testing*
 
 Question: do we need pundit?
 Answer: doesn't look like we do at the moment, as there are so few pages that need authorisation.
@@ -557,8 +583,6 @@ Mentors edit page: you can currently access any mentor edit page by using mentor
 Update: there is now a check that the logged in user is the one who is the mentor that they are trying to edit. If they are not, they get redirected to their own user profile with a notice saying they are not allowed to edit this profile.
 
 If you aren't logged in the navbar just looks like a bunch of empty divs in html - Rails has effectively hidden the links.
-
-## Further Discussions
 
 If we are to actually launch the app, we definitely need authorization from pundit on all data changes (bookings, reviews, mentors). However, our MVP currently meets expectations with some form of authorization.
 
